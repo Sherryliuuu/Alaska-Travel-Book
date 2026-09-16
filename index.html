@@ -174,7 +174,7 @@ html{scrollbar-color:var(--rule) transparent;scrollbar-width:thin}
 }
 
 /* ---------- generic sections ---------- */
-section{margin-top:56px;scroll-margin-top:148px}
+section{margin-top:56px;scroll-margin-top:138px}
 h2{font-size:clamp(25px,5vw,33px);font-weight:700;letter-spacing:-.015em}
 h2 .en{display:block;font-size:.5em;font-weight:500;letter-spacing:.02em;color:var(--ink-3);margin-top:7px}
 h3{font-size:20px;font-weight:600;margin-top:34px}
@@ -204,7 +204,7 @@ hr{border:0;border-top:1px solid var(--rule-soft);margin:44px 0}
 }
 
 /* ---------- day blocks ---------- */
-.day{margin-top:64px;scroll-margin-top:148px}
+.day{margin-top:64px;scroll-margin-top:138px}
 .day-head{
   border-top:2px solid var(--ink);padding-top:14px;
   display:flex;justify-content:space-between;align-items:flex-start;gap:14px 26px;flex-wrap:wrap
@@ -284,27 +284,30 @@ hr{border:0;border-top:1px solid var(--rule-soft);margin:44px 0}
 .sched .jump:hover{text-decoration-color:var(--spruce);color:var(--spruce-ink)}
 
 /* activity entries */
-.acts{display:flex;flex-direction:column;gap:26px;margin-top:30px}
+.acts{display:flex;flex-direction:column;gap:6px;margin-top:14px}
 details.act{
-  position:relative;border-left:1px solid var(--rule);padding-left:24px;
-  scroll-margin-top:151px
+  position:relative;border-left:1px solid var(--rule);
+  padding:12px 14px 12px 24px;border-radius:0 3px 3px 0;
+  scroll-margin-top:141px
 }
 details.act > summary.act-h{list-style:none;cursor:pointer}
 details.act > summary.act-h::-webkit-details-marker{display:none}
 /* marker is positioned against the details box, inside its own padding */
 details.act::before{
-  content:"";position:absolute;left:8px;top:9px;width:6px;height:6px;
+  content:"";position:absolute;left:8px;top:21px;width:6px;height:6px;
   border-right:1.7px solid var(--ink-3);border-bottom:1.7px solid var(--ink-3);
   transform:rotate(-45deg);transition:transform .16s ease;pointer-events:none
 }
 details.act[open]::before{transform:rotate(45deg) translate(-1px,-1px)}
 details.act > summary.act-h:hover{color:var(--spruce-ink)}
-details.act:target{
-  border-left-color:var(--spruce);
-  background:color-mix(in srgb,var(--spruce) 7%,transparent);
-  border-radius:0 3px 3px 0
+@keyframes act-flash{
+  0%,62%{
+    background:color-mix(in srgb,var(--spruce) 9%,transparent);
+    border-left-color:var(--spruce)
+  }
+  100%{background:transparent;border-left-color:var(--rule)}
 }
-details.act:target::before{border-color:var(--spruce)}
+details.act.flash{animation:act-flash 2.2s ease-out}
 .act-h{font-family:Archivo,"Noto Serif TC",sans-serif;font-size:17.5px;font-weight:600;line-height:1.3}
 .act-h .meta{
   display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:400;
@@ -312,6 +315,7 @@ details.act:target::before{border-color:var(--spruce)}
 }
 .act p{margin:10px 0;font-size:16px}
 .act > p:first-of-type{margin-top:9px}
+.act > *:last-child{margin-bottom:0}
 
 /* notes */
 .note{
@@ -357,7 +361,7 @@ details.note > ul{margin:0;padding:0 15px 12px 32px}
   --note-bg:color-mix(in srgb,var(--violet) 8%,var(--paper))}
 .note .lbl{color:var(--note-key)}
 .stay{
-  margin-top:26px;padding-top:12px;border-top:1px solid var(--rule-soft);
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--rule-soft);
   font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2);line-height:1.6
 }
 .stay b{color:var(--ink);font-weight:600}
@@ -1168,7 +1172,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · Fairbanks 自理</span></div>
-    <div><span class="m-l">午餐</span><span class="m-v">The Crepery 可麗餅</span></div>
+    <div><span class="m-l">午餐</span><span class="m-v none">待定 · 市區自理</span></div>
     <div><span class="m-l">晚餐</span><span class="m-v none">待定 · Fairbanks 市區</span></div>
   </div>
 
@@ -1177,10 +1181,10 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <ul>
       <li><b>上午</b> 睡飽，今天幾乎不用開車</li>
       <li><b>10:00–12:00</b> <a class="jump" href="#a-d7-1">UA Museum of the North</a>（冬季時間 9:00–17:30，比夏天早 1.5 小時關）</li>
-      <li><b>12:30</b> 市區 <a class="jump" href="#a-d7-2">The Crepery 午餐</a></li>
-      <li><b>下午</b> 補眠，為最後一晚存體力；或選配的 <a class="jump" href="#a-d7-3">Chena River 銀鮭釣</a>（4–5 小時）</li>
-      <li><b>17:45–19:00</b> 選配 <a class="jump" href="#a-d7-4">Wedgewood 保護區 + Creamer’s Field</a>（免費 · 找駝鹿 · 黃昏最好）</li>
-      <li><b>22:00 起</b> <a class="jump" href="#a-d7-5">極光第 3 晚</a>，換一個跟前兩晚不同方位的點（月亮 62%，三晚最暗）</li>
+      <li><b>12:30</b> 市區午餐自理，再去 <a class="jump" href="#a-d7-2">The Crepery</a> 吃甜點</li>
+      <li><b>13:30–14:30</b> <a class="jump" href="#a-d7-3">Morris Thompson 文化與遊客中心</a>（免費 · 走路 8 分鐘 · 17:00 關）</li>
+      <li><b>下午</b> 補眠 或 選配（二選一，或都不去）<a class="jump" href="#a-d7-4">Chena River 銀鮭釣</a>（4–5 小時 · 需先訂）、<a class="jump" href="#a-d7-5">Wedgewood 保護區 + Creamer’s Field</a>（17:45–19:00 · 免費 · 黃昏找駝鹿）</li>
+      <li><b>22:00 起</b> <a class="jump" href="#a-d7-6">極光第 3 晚</a>，換一個跟前兩晚不同方位的點（月亮 62%，三晚最暗）</li>
       <li><b>02:00</b> 硬性下山時間 —— 明天有飛機</li>
     </ul>
       </div>
@@ -1193,12 +1197,18 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     </details>
 
     <details class="act" id="a-d7-2">
-      <summary class="act-h">Fairbanks Downtown · The Crepery <span class="meta">午餐</span></summary>
-      
-      <p>The Crepery 的可麗餅在市區，評價好。市區不大，走路就能逛完。</p>
+      <summary class="act-h">Fairbanks Downtown · The Crepery <span class="meta">523 2nd Ave · 甜點</span></summary>
+
+      <p><b>The Crepery 是甜點店，不是正餐</b>——午餐先在市區自己找，吃飽再過去當飯後甜點。市區不大，餐廳都在走路範圍內。Crepery 在 523 2nd Ave，離下一站 Morris Thompson 走路約 8 分鐘。</p>
     </details>
 
     <details class="act" id="a-d7-3">
+      <summary class="act-h">Morris Thompson 文化與遊客中心 <span class="meta">101 Dunkel St · 免費 · 8:00–17:00 · 1 小時</span></summary>
+
+      <p>離 The Crepery 走路約 8 分鐘，<b>完全免費</b>。裡面是阿拉斯加內陸的自然與原住民文化常設展——potlatch 傳統宴會展示、野生動物立體模型、四季變化的互動展。<b>另外有兩個服務台</b>：Explore Fairbanks 遊客中心，和 Alaska Public Lands Information Center——後者的巡山員可以問到即時路況、步道和小屋狀況，<b>晚上要開去 Murphy Dome 或 Cleary Summit 看極光之前，這裡是問路況最準的地方</b>。館內還有 Alaska Geographic 書店和 Denakkanaaga 原住民手工藝店，買紀念品比機場划算。冬季時間 9/4–12/31 每天 8:00–17:00，一週七天。</p>
+    </details>
+
+    <details class="act" id="a-d7-4">
       <summary class="act-h">Chena River 銀鮭釣（選配） <span class="meta">4–5 小時 · ~$175 + 執照 $15 · 至 10/15</span></summary>
       
       <p>九月是 silver salmon (Coho) 的高峰尾聲，業者提供裝備、餌和嚮導，不需要經驗。</p>
@@ -1211,7 +1221,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
 
-    <details class="act" id="a-d7-4">
+    <details class="act" id="a-d7-5">
       <summary class="act-h">Wedgewood 野生動物保護區 + Creamer’s Field（選配） <span class="meta">212 Wedgewood Dr · 免費 · 24 小時開放 · 1–1.5 小時</span></summary>
 
       <p>就在市區，碎石壓實步道幾乎沒有坡：Taiga Loop 0.65 哩、Wander Lake Loop 再 0.8 哩，八個人慢慢走一圈約一小時。<b>這裡的步道直接連通 Creamer’s Field</b>，兩個點可以一趟走完。官方紀錄有 15 種哺乳類（河狸、赤狐、飛鼠、雪鞋兔、駝鹿）和 100 多種鳥，湖邊有一個賞鳥掩體。停車停 Fountainhead 古董車博物館的停車場，穿過展示區走到登山口。</p>
@@ -1235,7 +1245,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
 
-    <details class="act" id="a-d7-5">
+    <details class="act" id="a-d7-6">
       <summary class="act-h">極光第 3 晚 <span class="meta">換一個方位 · Murphy Dome 或 Cleary Summit</span></summary>
       
       <p>最後一晚，月亮 62% 是這三晚最暗的。建議<b>換一個跟前兩晚不同方位的點</b>——費爾班克斯的雲常常只蓋住半邊天。</p>
@@ -1418,13 +1428,24 @@ document.querySelectorAll('input[type="checkbox"]').forEach(box => {
  try { box.checked = localStorage.getItem(key) === 'true'; } catch {}
  box.addEventListener('change', () => { try { localStorage.setItem(key, String(box.checked)); } catch {} });
 });
+function flashAct(el){
+ if (!el || !el.classList.contains('act')) return;
+ el.classList.remove('flash');
+ void el.offsetWidth;
+ el.classList.add('flash');
+ el.addEventListener('animationend', () => el.classList.remove('flash'), {once:true});
+}
+function revealHash(hash){
+ const target = hash && hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+ if (!target) return;
+ for (let el = target; el; el = el.parentElement) if (el.tagName === 'DETAILS') el.open = true;
+ flashAct(target);
+}
 document.querySelectorAll('a[href^="#"]').forEach(link => {
- link.addEventListener('click', () => {
-  const target = document.getElementById(link.getAttribute('href').slice(1));
-  if (!target) return;
-  for (let el = target; el; el = el.parentElement) if (el.tagName === 'DETAILS') el.open = true;
- });
+ link.addEventListener('click', () => revealHash(link.getAttribute('href')));
 });
+window.addEventListener('hashchange', () => revealHash(location.hash));
+revealHash(location.hash);
 </script>
 <script>
 (() => {
@@ -1449,6 +1470,36 @@ function render(){
 status.setAttribute('aria-live','polite');field.setAttribute('aria-label','待確認事項');
 document.getElementById('open-add').addEventListener('submit',e=>{e.preventDefault();const text=field.value.trim();if(!text)return;items.push({text,who:document.getElementById('oi-who').value,done:false});save();render();field.value='';field.focus();});
 render();
+})();
+</script>
+
+<script>
+/* scroll-spy: highlight the rail link for whichever section is under the nav */
+(() => {
+ const rail = document.querySelector('.rail');
+ if (!rail) return;
+ const entries = Array.from(rail.querySelectorAll('a[href^="#"]'))
+   .map(a => ({a, el: document.getElementById(a.getAttribute('href').slice(1))}))
+   .filter(x => x.el);
+ if (!entries.length) return;
+ let ticking = false, currentA = null;
+ function update(){
+  ticking = false;
+  const offset = rail.getBoundingClientRect().height + 12;
+  let active = entries[0];
+  for (const e of entries) if (e.el.getBoundingClientRect().top - offset <= 0) active = e;
+  const doc = document.documentElement;
+  if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) active = entries[entries.length - 1];
+  if (active.a === currentA) return;
+  if (currentA) currentA.removeAttribute('aria-current');
+  active.a.setAttribute('aria-current','true');
+  currentA = active.a;
+ }
+ function queue(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+ addEventListener('scroll', queue, {passive:true});
+ addEventListener('resize', queue);
+ addEventListener('hashchange', () => setTimeout(queue, 60));
+ update();
 })();
 </script>
 </body></html>
