@@ -1319,27 +1319,10 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
 <!-- ================= OPEN ITEMS ================= -->
 <section id="open">
-  <h2>待確認</h2>
-  <p>想到什麼要確認的就打上去，確認完打勾。此版本儲存在目前瀏覽器，不會同步給其他旅伴。</p>
-
-  <div class="open" id="openlist"><div class="open-item"><span class="open-tag">CLAUDE</span><div class="open-body">Valdez 的 Nat Shack 還開著嗎？旺季結束後常縮短時間或直接關門——出發前一週打一次電話。真的關了就改吃 Valdez 市區其他海鮮。</div></div></div>
-  <p class="open-note" id="open-status">還有 1 件待確認</p>
-
-  <form class="open-add" id="open-add">
-    <input id="oi-text" type="text" maxlength="140" required="" placeholder="要確認什麼？例如：Palmer Airbnb 有沒有洗衣機">
-    <select id="oi-who" aria-label="誰提的">
-      <option value="Sherry">Sherry</option>
-      <option value="Shumin">Shumin</option>
-      <option value="HH">HH</option>
-      <option value="Mindy">Mindy</option>
-      <option value="Chien">Chien</option>
-      <option value="Mu-Ti">Mu-Ti</option>
-      <option value="Winnie">Winnie</option>
-      <option value="Samuel">Samuel</option>
-      <option value="其他">其他</option>
-    </select>
-    <button type="submit">新增</button>
-  </form>
+<h2>待確認</h2>
+<p>大家都可以新增事項、勾選完成，內容共用並儲存在 Google Sheets。清單每 30 秒更新，也可以按「重新整理」。</p>
+<iframe title="旅行共用待確認清單" src="https://script.google.com/macros/s/AKfycbywKdzW612IFZUoIyNEqUz4VZCvNmqPsWlGWMpf9MWfpz9NG0ici_ai79ARvQes9ZWl/exec" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="width:100%;height:560px;border:1px solid var(--rule);border-radius:4px;background:var(--ground)"></iframe>
+<p class="open-note">若清單未載入，請<a href="https://script.google.com/macros/s/AKfycbywKdzW612IFZUoIyNEqUz4VZCvNmqPsWlGWMpf9MWfpz9NG0ici_ai79ARvQes9ZWl/exec" target="_blank" rel="noopener">另開共用清單</a>。移除事項請由管理者在試算表處理。</p>
 </section>
 
 <!-- ================= BACKUP ================= -->
@@ -1406,29 +1389,5 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
  });
 });
 </script>
-<script>
-(() => {
-const key='alaska-open-items-v1', list=document.getElementById('openlist'), status=document.getElementById('open-status'), field=document.getElementById('oi-text');
-let items=[{text:"Valdez 的 Nat Shack 還開著嗎？旺季結束後常縮短時間或直接關門——出發前一週打一次電話。真的關了就改吃 Valdez 市區其他海鮮。",who:'Claude',done:false}], persistent=true;
-try {const saved=JSON.parse(localStorage.getItem(key));if(Array.isArray(saved)&&saved.every(x=>x&&typeof x.text==='string'&&typeof x.who==='string'&&typeof x.done==='boolean'))items=saved;}catch{persistent=false;}
-function save(){try{localStorage.setItem(key,JSON.stringify(items));persistent=true;}catch{persistent=false;}}
-function render(){
- list.replaceChildren();
- items.forEach((item,i)=>{
-  const row=document.createElement('div');row.className='open-item'+(item.done?' done':'');
-  const check=document.createElement('input');check.type='checkbox';check.className='open-check';check.checked=item.done;check.setAttribute('aria-label','確認完成：'+item.text);
-  check.addEventListener('change',()=>{item.done=check.checked;save();render();});
-  const tag=document.createElement('span');tag.className='open-tag';tag.textContent=item.who;
-  const body=document.createElement('div');body.className='open-body';body.textContent=item.text;
-  const del=document.createElement('button');del.type='button';del.className='open-del';del.textContent='×';del.setAttribute('aria-label','刪除：'+item.text);
-  del.addEventListener('click',()=>{items.splice(i,1);save();render();});
-  row.append(check,tag,body,del);list.append(row);
- });
- status.textContent='還有 '+items.filter(x=>!x.done).length+' 件待確認'+(persistent?'':' · 瀏覽器無法儲存，重新整理後可能遺失修改');
-}
-status.setAttribute('aria-live','polite');field.setAttribute('aria-label','待確認事項');
-document.getElementById('open-add').addEventListener('submit',e=>{e.preventDefault();const text=field.value.trim();if(!text)return;items.push({text,who:document.getElementById('oi-who').value,done:false});save();render();field.value='';field.focus();});
-render();
-})();
-</script>
+
 </body></html>
