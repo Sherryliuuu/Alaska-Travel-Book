@@ -21,7 +21,7 @@
 <title>Alaska Aurora Field Book</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;1,400&amp;family=Noto+Sans+TC:wght@400..700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
 
 <style>
 :root{
@@ -79,7 +79,7 @@
 body{
   background:var(--ground);
   color:var(--ink);
-  font-family:"Source Serif 4","Noto Serif TC",Georgia,"Songti TC",serif;
+  font-family:"Source Sans 3","Noto Sans TC","PingFang TC","Microsoft JhengHei","Helvetica Neue",Arial,sans-serif;
   font-size:17px;
   line-height:1.72;
   margin:0;
@@ -89,7 +89,7 @@ body{
 .wrap{max-width:820px;margin:0 auto;padding:0 20px 88px}
 
 h1,h2,h3,h4,.disp{
-  font-family:Archivo,"Noto Serif TC","Helvetica Neue",sans-serif;
+  font-family:Archivo,"Noto Sans TC","PingFang TC","Helvetica Neue",sans-serif;
   text-wrap:balance;
   line-height:1.15;
   margin:0;
@@ -107,15 +107,21 @@ html{scrollbar-color:var(--rule) transparent;scrollbar-width:thin}
 .tbl-scroll::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
 
 /* ---------- masthead ---------- */
-.masthead{padding-block:52px 28px;border-bottom:2px solid var(--ink)}
-.masthead h1{font-size:clamp(38px,9vw,62px);font-weight:700;letter-spacing:-.02em}
-.masthead h1 .cjk{font-family:"Noto Serif TC",serif;font-weight:700;letter-spacing:.01em}
+.masthead{padding-block:30px 22px;border-bottom:2px solid var(--ink)}
+.mast-text{min-width:0}
+.hero{margin:18px 0 0}
+.hero img{
+  display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;
+  border-radius:4px;background:var(--paper-2)
+}
+.masthead h1{font-size:clamp(29px,6.4vw,46px);font-weight:700;letter-spacing:-.02em}
+.masthead h1 .cjk{font-family:"Noto Sans TC","PingFang TC",sans-serif;font-weight:700;letter-spacing:.01em}
 .dateline{
-  font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-2);
-  margin-top:14px;font-variant-numeric:tabular-nums
+  font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-2);
+  margin-top:11px;font-variant-numeric:tabular-nums
 }
 .facts{
-  display:flex;flex-wrap:nowrap;align-items:center;gap:10px;margin-top:22px;
+  display:flex;flex-wrap:nowrap;align-items:center;gap:10px;margin-top:15px;
   font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2);
   font-variant-numeric:tabular-nums;
   white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px
@@ -143,7 +149,7 @@ html{scrollbar-color:var(--rule) transparent;scrollbar-width:thin}
 }
 .rail-days a .d{font-family:Archivo,sans-serif;font-size:14px;font-weight:700;color:var(--ink);line-height:1}
 .rail-days a .dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);line-height:1;font-variant-numeric:tabular-nums}
-.rail-days a .dw{font-family:"Noto Serif TC",serif;font-size:10.5px;color:var(--ink-3);line-height:1}
+.rail-days a .dw{font-family:"Noto Sans TC","PingFang TC",sans-serif;font-size:10.5px;color:var(--ink-3);line-height:1}
 .rail-days a:hover{border-color:var(--ink-3)}
 .rail-days a[aria-current="true"]{
   border:2px solid var(--spruce);
@@ -167,6 +173,7 @@ html{scrollbar-color:var(--rule) transparent;scrollbar-width:thin}
 .rail-pre{margin-bottom:5px}
 .rail-post{margin-top:5px}
 .rail-pre a{background:var(--paper-2)}
+
 @media (max-width:380px){
   .rail-days a .d{font-size:13px}
   .rail-days a .dt,.rail-days a .dw{font-size:10px}
@@ -174,7 +181,8 @@ html{scrollbar-color:var(--rule) transparent;scrollbar-width:thin}
 }
 
 /* ---------- generic sections ---------- */
-section{margin-top:56px;scroll-margin-top:138px}
+section{margin-top:30px;padding-top:26px;scroll-margin-top:138px}
+section>h2{margin-top:0}
 h2{font-size:clamp(25px,5vw,33px);font-weight:700;letter-spacing:-.015em}
 h2 .en{display:block;font-size:.5em;font-weight:500;letter-spacing:.02em;color:var(--ink-3);margin-top:7px}
 h3{font-size:20px;font-weight:600;margin-top:34px}
@@ -284,7 +292,7 @@ hr{border:0;border-top:1px solid var(--rule-soft);margin:44px 0}
 .sched .jump:hover{text-decoration-color:var(--spruce);color:var(--spruce-ink)}
 
 /* activity entries */
-.acts{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.acts{display:flex;flex-direction:column;gap:18px;margin-top:14px}
 details.act{
   position:relative;border-left:1px solid var(--rule);
   padding:12px 14px 12px 24px;border-radius:0 3px 3px 0;
@@ -308,11 +316,52 @@ details.act > summary.act-h:hover{color:var(--spruce-ink)}
   100%{background:transparent;border-left-color:var(--rule)}
 }
 details.act.flash{animation:act-flash 2.2s ease-out}
-.act-h{font-family:Archivo,"Noto Serif TC",sans-serif;font-size:17.5px;font-weight:600;line-height:1.3}
+.act-h{font-family:Archivo,"Noto Sans TC","PingFang TC",sans-serif;font-size:17.5px;font-weight:600;line-height:1.3}
 .act-h .meta{
   display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:400;
   color:var(--ink-3);letter-spacing:.03em;margin-top:5px;font-variant-numeric:tabular-nums
 }
+.fix{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.07em;font-weight:600;color:var(--spruce-ink);
+  background:color-mix(in srgb,var(--spruce) 13%,var(--paper));
+  border:1px solid color-mix(in srgb,var(--spruce) 32%,var(--rule));
+  border-radius:2px;padding:1px 5px;margin-left:7px;vertical-align:1.5px;white-space:nowrap
+}
+.flexday{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.07em;font-weight:600;color:var(--ochre-ink);
+  background:color-mix(in srgb,var(--ochre) 12%,var(--paper));
+  border:1px solid color-mix(in srgb,var(--ochre) 32%,var(--rule));
+  border-radius:2px;padding:1px 5px;margin-left:7px;vertical-align:1.5px;white-space:nowrap
+}
+.wx-status{
+  margin:0 0 10px;font-family:"IBM Plex Mono",monospace;font-size:12px;
+  color:var(--ink-3);letter-spacing:.02em
+}
+.wx-status.live{color:var(--spruce-ink)}
+.shot{margin:12px 0 0}
+.shot img{
+  display:block;width:100%;height:auto;max-height:260px;object-fit:cover;
+  border-radius:3px;background:var(--paper-2);border:1px solid var(--rule)
+}
+.shot figcaption{
+  margin-top:6px;line-height:1.55;font-family:"IBM Plex Mono",monospace;font-size:11px;
+  color:var(--ink-3);letter-spacing:.02em
+}
+.shot figcaption b{color:var(--ink-2);font-weight:600}
+.shot figcaption a{color:var(--ink-3);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}
+.shot figcaption a:hover{color:var(--spruce-ink)}
+.maps{
+  margin:10px 0 0;font-family:"IBM Plex Mono",monospace;font-size:12px;
+  color:var(--ink-3);letter-spacing:.02em;line-height:1.7
+}
+.maps .sep{opacity:.5;padding:0 2px}
+.maps a{
+  color:var(--ink-3);text-decoration:underline;text-decoration-color:var(--rule);
+  text-underline-offset:3px
+}
+.maps a:hover{color:var(--spruce-ink);text-decoration-color:var(--spruce)}
 .act p{margin:10px 0;font-size:16px}
 .act > p:first-of-type{margin-top:9px}
 .act > *:last-child{margin-bottom:0}
@@ -369,11 +418,12 @@ details.note > ul{margin:0;padding:0 15px 12px 32px}
   color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--rule);
   text-underline-offset:3px
 }
+.stay .sep{opacity:.45;padding:0 2px}
 .stay a:hover{color:var(--spruce-ink);text-decoration-color:var(--spruce)}
 
 /* packing checklist */
 .pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:22px;margin-top:24px}
-.pack-col h4{font-family:Archivo,"Noto Serif TC",sans-serif;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--spruce);margin-bottom:10px}
+.pack-col h4{font-family:Archivo,"Noto Sans TC","PingFang TC",sans-serif;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--spruce);margin-bottom:10px}
 .pack ul{list-style:none;margin:0;padding:0}
 .pack li{display:flex;gap:9px;align-items:flex-start;padding:4px 0;font-size:15px;line-height:1.5}
 .pack input{margin:6px 0 0;accent-color:var(--spruce);flex:none;width:15px;height:15px}
@@ -414,6 +464,22 @@ tbody td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
   color:var(--ink-3);font-family:"IBM Plex Mono",monospace;font-size:15px;line-height:1;border-radius:3px
 }
 .open-del:hover{background:var(--paper-2);color:var(--ochre-ink)}
+.open-embed{
+  margin-top:18px;border:1px solid var(--rule);border-radius:4px;
+  background:#e7ebe9;overflow:hidden
+}
+.open-embed iframe{
+  display:block;width:100%;height:440px;border:0
+}
+@media (max-width:520px){.open-embed iframe{height:520px}}
+.open-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px}
+.open-btn{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.03em;
+  color:var(--spruce-ink);text-decoration:none;padding:9px 15px;border-radius:3px;
+  border:1px solid color-mix(in srgb,var(--spruce) 45%,var(--rule));
+  background:color-mix(in srgb,var(--spruce) 11%,var(--paper))
+}
+.open-btn:hover{background:color-mix(in srgb,var(--spruce) 20%,var(--paper))}
 .open-note{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin-top:14px}
 .open-add{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .open-add input[type=text]{
@@ -437,7 +503,7 @@ tbody td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
 /* backup list */
 .backup{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:22px}
 .backup div{border-top:1px solid var(--rule);padding-top:11px}
-.backup .n{font-family:Archivo,"Noto Serif TC",sans-serif;font-size:15.5px;font-weight:600}
+.backup .n{font-family:Archivo,"Noto Sans TC","PingFang TC",sans-serif;font-size:15.5px;font-weight:600}
 .backup .d{font-size:14px;color:var(--ink-3);line-height:1.55;margin-top:4px}
 .backup .m{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ice);margin-top:6px;letter-spacing:.03em}
 
@@ -449,11 +515,58 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   .act{padding-left:14px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- 桌機 / iPad：導覽列移到左側 ---------- */
+@media (min-width:860px){
+  .wrap{
+    max-width:1100px;
+    display:grid;
+    grid-template-columns:190px minmax(0,1fr);
+    column-gap:40px;
+    align-items:start
+  }
+  .masthead{
+    grid-column:1 / -1;
+    display:grid;grid-template-columns:minmax(0,1fr) 320px;
+    column-gap:36px;align-items:center;
+    padding-block:26px 20px
+  }
+  .hero{margin:0}
+  .hero img{aspect-ratio:16/10}
+  .wrap > :not(.masthead):not(.rail){grid-column:2}
+  .rail{
+    grid-column:1;
+    grid-row:2 / span 999;
+    align-self:start;
+    top:22px;
+    border-bottom:0;
+    margin-bottom:0;
+    padding-block:28px 0;
+    max-height:calc(100vh - 44px);
+    overflow-y:auto;
+    scrollbar-width:thin
+  }
+  .rail-days{grid-template-columns:1fr;gap:3px}
+  .rail-days a{
+    flex-direction:row;align-items:baseline;justify-content:flex-start;
+    gap:9px;min-height:0;padding:7px 10px
+  }
+  .rail-days a .d{font-size:13px}
+  .rail-days a .dt{margin-left:auto}
+  .rail-secs{flex-direction:column;gap:3px}
+  .rail-secs a{flex:none;text-align:left;padding:7px 10px;font-size:12.5px}
+  .rail-pre{margin-bottom:9px}
+  .rail-post{margin-top:9px}
+  /* 沒有東西蓋住頁面頂端了，跳轉不需要再讓位 */
+  section,.day{scroll-margin-top:28px}
+  details.act{scroll-margin-top:32px}
+}
 </style>
 
 <div class="wrap">
 
 <header class="masthead">
+  <div class="mast-text">
   <h1>Alaska Aurora<br><span class="cjk">阿拉斯加極光手冊</span></h1>
   <p class="dateline">2026 / 09 / 26 — 10 / 03 &nbsp;·&nbsp; 八天</p>
   <p class="facts">
@@ -464,6 +577,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <span><b>3</b> 個極光夜</span>
   </p>
   <p class="facts-note">9/26–9/27 是 6 人 1 台車，第 2 台 9/27 晚加入</p>
+  </div>
+  <figure class="hero"><img src="aurora-header.jpg" alt="阿拉斯加山脈上空的極光" width="1200" height="628" decoding="async" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"></figure>
 </header>
 
 <nav class="rail" aria-label="行程導覽">
@@ -490,11 +605,12 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
 <section id="intro" style="margin-top:0">
   <h2>前言</h2>
-  <p class="lede">八個人、兩台車、八天，從安克拉治一路開到費爾班克斯：三座冰川、一個冰洞、一片深水海灣、三個極光晚上。九月底的阿拉斯加同時給你兩個季節——白天是金黃色的凍原和山頂的第一場雪（當地人叫 termination dust），晚上是零度上下的等待。</p>
-  <p>這本手冊按天排。每個行程只寫兩件事：<b>帶什麼</b>、<b>注意什麼</b>。本身就安全、沒什麼好提醒的行程（博物館、市區吃飯、看油管）就不多寫，只留時間和地點。紫色標記的是<b>還沒確認的事</b>——資料表上兩個分頁對不上，或是我查到的資訊跟表上不同。</p>
+  <p class="lede">八個人、兩台車、八天，從安克拉治一路開到費爾班克斯：三座冰川、一片深水海灣、三個極光晚上。九月底的阿拉斯加同時給你兩個季節——白天是金黃色的凍原和山頂的第一場雪（當地人叫 termination dust），晚上是零度上下的等待。</p>
+  <p>這本手冊按天排。每個行程只寫兩件事：<b>帶什麼</b>、<b>注意什麼</b>。本身就安全、沒什麼好提醒的行程（博物館、市區吃飯、看油管）就不多寫，只留時間和地點。時間表上標<span class="fix">已訂</span>的是<b>已經訂好、付過錢或有人等我們的行程——這幾項必走，時間不能動</b>；標<span class="flexday">9/28 或 9/30</span>的是<b>去程回程都會經過、哪天走都行的點</b>。其餘沒有標的都可以當天視狀況調整。紫色標記的是<b>還沒確認的事</b>——資料表上兩個分頁對不上，或是我查到的資訊跟表上不同。</p>
+  <p class="maps">📍 全部景點、住宿、加油站和租車點都收在一份共用的 Google 地圖清單裡：<a href="https://maps.app.goo.gl/9PrJDUgPUCuHj2336" target="_blank" rel="noopener"><b>Alaska Roadtrip</b></a> —— 手機上打開會直接進 Google 地圖 app，出發前記得先存到自己的帳號。</p>
 
   <div class="profile">
-    <svg viewBox="0 0 900 200" role="img" aria-label="路線高度剖面：從 Anchorage 翻過 Hatcher Pass 與 Thompson Pass 下降到海平面的 Valdez，再北上經 Castner 到 Fairbanks。">
+    <svg viewBox="0 0 900 200" role="img" aria-label="路線高度剖面：從 Anchorage 翻過 Hatcher Pass 與 Thompson Pass 下降到海平面的 Valdez，再北上沿 Richardson Highway 到 Fairbanks。">
       <line x1="20" y1="170" x2="880" y2="170" stroke="var(--rule)" stroke-width="1.6"></line>
       <polyline points="35,166 86,166 149,161 175,40 200,161 264,115 346,117 441,72 473,169 505,72 632,93 708,130 822,152 835,154" fill="none" stroke="var(--spruce)" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"></polyline>
       <g fill="var(--spruce)">
@@ -508,7 +624,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       <li><b>Hatcher Pass</b><span>3,550 ft</span></li>
       <li><b>Thompson Pass</b><span>2,678 ft</span></li>
       <li class="sea"><b>Valdez</b><span>海平面</span></li>
-      <li><b>Castner</b><span>MM 217</span></li>
+      <li><b>Rainbow Mountain</b><span>MM 209</span></li>
       <li><b>Fairbanks</b><span>446 ft</span></li>
     </ol>
     <p class="profile-cap">路線高度剖面，由左至右就是行程順序。兩個山口（Hatcher、Thompson）是全程天氣最容易變的地方，也是第一場雪最早下的地方。</p>
@@ -521,11 +637,12 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <h2>出發前</h2>
 
   <h3>每日天氣</h3>
+  <p class="wx-status" id="wx-status">預報為 2026/9/18 的快照 —— 打開這一頁時會自動抓最新資料。</p>
   <details class="note check" open="">
         <summary class="lbl">先讀這個<span class="cnt">3</span></summary>
         <ul>
-      <li>資料抓取時間 <b>2026/9/15</b>。預報模型最遠只到 <b>9/30</b>，所以 <b>D6–D8（10/1–10/3）沒有預報可用</b>，那三天填的是氣候平均值，表格裡有標。</li>
-      <li>D1–D5 每一天都是 <b>11–15 天後</b>的預報。這種距離的數字只能看<b>趨勢</b>（偏乾還是偏濕、偏暖還是偏冷），不要拿來決定要不要帶雨褲。<b>出發前 7 天和 3 天各再看一次。</b></li>
+      <li>資料抓取時間 <b>2026/9/18</b>（Open-Meteo）。模型最遠到 <b>10/2</b>，所以 <b>D1–D7 都有真實預報了</b>，只有 <b>D8（10/3）</b>還在範圍外。</li>
+      <li>現在是 <b>8–14 天後</b>的預報，比上一版近了 3 天，但這種距離仍然只能看<b>趨勢</b>（偏乾還是偏濕、偏暖還是偏冷）。<b>出發前 3 天再看一次，那時才是可以拿來決定穿什麼的數字。</b></li>
       <li>白天大約 11 小時，而且每天少 6 分鐘。步道行程抓「<b>日落前 1 小時回到停車場</b>」，這幾天大約是 <b>18:15–18:45</b>；日落後還有約 45 分鐘微光，那 1 小時是留給走錯路或走比較慢的人的。</li>
     </ul>
       </details>
@@ -533,14 +650,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <table>
       <thead><tr><th>日期</th><th>地點</th><th>高 / 低溫</th><th>天氣</th><th>雲量 · 風</th><th>日出 / 日落</th></tr></thead>
       <tbody>
-        <tr><td><b>D1</b> 9/26 六</td><td>Anchorage</td><td class="num">53 / 46°F<br>12 / 8°C</td><td>毛毛雨<br><span style="color:var(--ink-3);font-size:13px">降雨機率 45%</span></td><td class="num">68%<br>18 mph</td><td class="num">07:54<br>19:45</td></tr>
-        <tr><td><b>D2</b> 9/27 日</td><td>Anchorage → Palmer</td><td class="num">57 / 44°F<br>14 / 7°C</td><td>陣雨<br><span style="color:var(--ink-3);font-size:13px">纜車山頂可能在雲裡</span></td><td class="num">86%<br>20 mph</td><td class="num">07:57<br>19:42</td></tr>
-        <tr><td><b>D3</b> 9/28 一</td><td>Palmer → Valdez</td><td class="num">47 / 35°F<br>8 / 2°C</td><td>Palmer 放晴、Valdez 有雨<br><span style="color:var(--ink-3);font-size:13px">冰川健行日，夜間近冰點</span></td><td class="num">22% → 92%<br>5–11 mph</td><td class="num">07:56<br>19:25</td></tr>
-        <tr><td><b>D4</b> 9/29 二</td><td>Valdez</td><td class="num">46 / 34°F<br>8 / 1°C</td><td>多雲時晴、無雨<br><span style="color:var(--spruce);font-size:13px">目前看起來是這週最好的一天</span></td><td class="num">25%<br>5 mph</td><td class="num">07:47<br>19:21</td></tr>
-        <tr><td><b>D5</b> 9/30 三</td><td>Valdez → Fairbanks</td><td class="num">53 / 34 → 45 / 32°F<br>12 / 1 → 7 / 0°C</td><td>沿途乾、Fairbanks 轉陰<br><span style="color:var(--ochre-ink);font-size:13px">極光第 1 晚雲量偏高</span></td><td class="num">59% → 97%<br>8 mph</td><td class="num">07:50<br>19:21</td></tr>
-        <tr><td><b>D6</b> 10/1 四</td><td>Chena Hot Springs</td><td class="num">40 / 25°F<br>4 / −4°C</td><td colspan="2" style="color:var(--ink-3)">超出預報範圍，數字為氣候平均值</td><td class="num">08:01<br>19:17</td></tr>
-        <tr><td><b>D7</b> 10/2 五</td><td>Fairbanks</td><td class="num">40 / 25°F<br>4 / −4°C</td><td colspan="2" style="color:var(--ink-3)">同上</td><td class="num">08:04<br>19:13</td></tr>
-        <tr><td><b>D8</b> 10/3 六</td><td>Fairbanks</td><td class="num">39 / 24°F<br>4 / −4°C</td><td colspan="2" style="color:var(--ink-3)">同上</td><td class="num">08:07<br>19:10</td></tr>
+        <tr data-d="2026-09-26" data-loc="0"><td><b>D1</b> 9/26 六</td><td>Anchorage</td><td class="num wx-t">54 / 44°F<br>12 / 7°C</td><td class="wx-w">毛毛雨</td><td class="num wx-cw">86%<br>5 mph</td><td class="num">07:54<br>19:45</td></tr>
+        <tr data-d="2026-09-27" data-loc="1"><td><b>D2</b> 9/27 日</td><td>Anchorage → Palmer</td><td class="num wx-t">48 / 43°F<br>9 / 6°C</td><td class="wx-w">毛毛雨</td><td class="num wx-cw">96%<br>3 mph</td><td class="num">07:57<br>19:42</td></tr>
+        <tr data-d="2026-09-28" data-loc="2"><td><b>D3</b> 9/28 一</td><td>Palmer → Valdez</td><td class="num wx-t">49 / 47°F<br>10 / 8°C</td><td class="wx-w">陣雨</td><td class="num wx-cw">100%<br>2 mph</td><td class="num">07:56<br>19:25</td></tr>
+        <tr data-d="2026-09-29" data-loc="2"><td><b>D4</b> 9/29 二</td><td>Valdez</td><td class="num wx-t">50 / 46°F<br>10 / 8°C</td><td class="wx-w">陣雨</td><td class="num wx-cw">100%<br>2 mph</td><td class="num">07:47<br>19:21</td></tr>
+        <tr data-d="2026-09-30" data-loc="3"><td><b>D5</b> 9/30 三</td><td>Valdez → Fairbanks</td><td class="num wx-t">44 / 35°F<br>7 / 2°C</td><td class="wx-w">陰</td><td class="num wx-cw">73%<br>11 mph</td><td class="num">07:50<br>19:21</td></tr>
+        <tr data-d="2026-10-01" data-loc="4"><td><b>D6</b> 10/1 四</td><td>Chena Hot Springs</td><td class="num wx-t">33 / 31°F<br>1 / −1°C</td><td class="wx-w"><b>小雪</b></td><td class="num wx-cw">89%<br>11 mph</td><td class="num">08:01<br>19:17</td></tr>
+        <tr data-d="2026-10-02" data-loc="3"><td><b>D7</b> 10/2 五</td><td>Fairbanks</td><td class="num wx-t">43 / 32°F<br>6 / 0°C</td><td class="wx-w">毛毛雨</td><td class="num wx-cw">100%<br>5 mph</td><td class="num">08:04<br>19:13</td></tr>
+        <tr data-d="2026-10-03" data-loc="3"><td><b>D8</b> 10/3 六</td><td>Fairbanks</td><td class="num wx-t">—</td><td class="wx-w">超出預報範圍</td><td class="num wx-cw">—</td><td class="num">08:07<br>19:10</td></tr>
       </tbody>
     </table>
   </div>
@@ -548,8 +665,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <summary class="lbl">山口不看這張表<span class="cnt">4</span></summary>
         <ul>
       <li>上表是城鎮高度的數字。<b>兩個山口比山下低 5–8°C，而且可能在下雪。</b></li>
-      <li><b>Hatcher Pass 3,550 ft（9/27）</b>：白天 0–4°C、夜間 −4–0°C，山頂可能已經有第一場雪（termination dust）。</li>
-      <li><b>Thompson Pass 2,678 ft（9/28 下山、9/30 上山）</b>：白天 −1–3°C、夜間 −6–−1°C，常起濃霧、風大，能見度可能只有幾公尺。</li>
+      <li><b>Hatcher Pass 3,550 ft（9/27）</b>：白天約 2°C、夜間 −1°C 上下，山頂可能已經有第一場雪（termination dust）。</li>
+      <li><b>Thompson Pass 2,678 ft（9/28 下山、9/30 上山）</b>：白天 3–5°C、清晨 1–3°C，這版預報比上一版暖，結冰風險降低；但 9/28 山下雲量 100%，<b>濃霧和能見度才是主要問題</b>。</li>
       <li>另外兩件跟全程有關的事：<b>Valdez 是全阿拉斯加最多雨的城鎮</b>，防水裝備在那兩天一定用得到；<b>Fairbanks 九月底夜間每晚結冰</b>，三個極光晚上都在冰點以下。</li>
     </ul>
       </details>
@@ -564,7 +681,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <li><input type="checkbox" id="p1"><label for="p1">防水外套 + 防水褲</label></li>
         <li><input type="checkbox" id="p2"><label for="p2">羽絨或刷毛中層 ×2</label></li>
         <li><input type="checkbox" id="p3"><label for="p3">羊毛底層上下</label></li>
-        <li><input type="checkbox" id="p4"><label for="p4">防水登山鞋（冰川、冰洞必備）</label></li>
+        <li><input type="checkbox" id="p4"><label for="p4">防水登山鞋（冰川健行必備）</label></li>
         <li><input type="checkbox" id="p5"><label for="p5">羊毛襪 ×4、手套 ×2 副、毛帽、圍脖</label></li>
         <li><input type="checkbox" id="p6"><label for="p6">泳衣 + 快乾毛巾 + 拖鞋（溫泉）</label></li>
       </ul>
@@ -572,12 +689,12 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <div class="pack-col">
       <h4>裝備</h4>
       <ul>
-        <li><input type="checkbox" id="p7"><label for="p7">冰爪 microspikes（冰洞、Hatcher Pass）</label></li>
+        <li><input type="checkbox" id="p7"><label for="p7">冰爪 microspikes（Matanuska、Hatcher Pass）</label></li>
         <li><input type="checkbox" id="p9"><label for="p9">暖暖包（手 + 腳）足量</label></li>
         <li><input type="checkbox" id="p10"><label for="p10">腳架 + 相機備用電池（低溫掉電快）</label></li>
         <li><input type="checkbox" id="p11"><label for="p11">行動電源、車充、保溫瓶</label></li>
         <li><input type="checkbox" id="p8"><label for="p8">頭燈（有紅光模式）+ 備用電池<span class="opt">選配</span></label></li>
-        <li><input type="checkbox" id="p12"><label for="p12">登山杖（Castner 冰洞溪床好用）<span class="opt">選配</span></label></li>
+        <li><input type="checkbox" id="p12"><label for="p12">登山杖<span class="opt">選配</span></label></li>
       </ul>
     </div>
     <div class="pack-col">
@@ -608,7 +725,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <p style="color:var(--ink-3);font-size:15px">好消息是只有兩天。<b>9/28 起 8 個人分兩台車</b>，每台 4 人份行李，空間就寬鬆了；而且 9/27 晚上就住進 Palmer 的 Airbnb，行李會先卸下來。</p>
 
   <h3>兩台車的規矩</h3>
-  <p><b>9/28 起適用</b>（9/26–9/27 只有 1 台車、6 個人）。八個人兩台車，最大的風險不是迷路，是<b>走散在沒有訊號的路上</b>。Glenn Highway、Richardson Highway、Thompson Pass、Castner 一帶都沒有手機訊號。</p>
+  <p><b>9/28 起適用</b>（9/26–9/27 只有 1 台車、6 個人）。八個人兩台車，最大的風險不是迷路，是<b>走散在沒有訊號的路上</b>。Glenn Highway、Richardson Highway、Thompson Pass 一帶都沒有手機訊號。</p>
   <details class="note bring" open="">
         <summary class="lbl">開車前先講好<span class="cnt">5</span></summary>
         <ul>
@@ -638,7 +755,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline"><b>今天只有 6 個人、1 台車</b>，Samuel 夫妻明晚才到。不排行程，讓身體適應時差。</p>
     <p class="legs"><span class="node">ANC 機場</span> <span class="arrow">→</span> <span class="dur">15分</span> <span class="arrow">→</span> <span class="node">市區</span> <span class="arrow">→</span> <span class="dur">20分</span> <span class="arrow">→</span> <span class="node">Airbnb</span></p>
   </div>
-    <p class="sky"><span>日出 <b>07:54</b></span><span>日落 <b>19:45</b></span><span>全黑 <b>~22:15</b></span><span>降雨 <b>45%</b></span></p>
+    <p class="sky" data-d="2026-09-26" data-loc="0"><span>日出 <b>07:54</b></span><span>日落 <b>19:45</b></span><span>全黑 <b>~22:15</b></span><span>降雨 <b class="wx-pop">47%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v">機上解決</span></div>
@@ -650,9 +767,9 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <p class="sched-h">今天的時間表</p>
         <ul>
       <li><b>16:06</b> DFW 班機落地 · <b>17:25</b> SFO 班機落地</li>
-      <li><b>18:00</b> <a class="jump" href="#a-d1-1">Enterprise 取第 1 台車</a>（minivan，6 人共乘，當場試裝行李）</li>
+      <li><b>18:00</b><span class="fix">已訂</span> <a class="jump" href="#a-d1-1">Enterprise 取第 1 台車</a>（minivan，6 人共乘，當場試裝行李）</li>
       <li><b>18:30</b> 進市區</li>
-      <li><b>19:30</b> <a class="jump" href="#a-d1-2">Glacier Brewhouse 晚餐</a>（Sherry 訂，6 人）</li>
+      <li><b>19:30</b><span class="fix">已訂</span> <a class="jump" href="#a-d1-2">Glacier Brewhouse 晚餐</a>（Sherry 訂，6 人）</li>
       <li><b>飯後</b> <a class="jump" href="#a-d1-3">Wild Scoops</a>、Summit Spice &amp; Tea（都關得早，先查時間）</li>
       <li><b>今晚或明早</b> <a class="jump" href="#a-d1-4">Fred Meyer / Carrs 採買</a>：水、零食、防熊噴霧</li>
     </ul>
@@ -661,6 +778,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="acts">
     <details class="act" id="a-d1-1">
       <summary class="act-h">Enterprise 取車（第 1 台） <span class="meta">18:00 · Mindy 訂 · 6 人共乘</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Enterprise%20Rent-A-Car%2C%20Ted%20Stevens%20Anchorage%20International%20Airport%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Enterprise · ANC 機場</a></p>
       
       <p>班機 16:06 (DFW) 和 17:25 (SFO) 落地，六點取車剛好。<b>今天只取第 1 台</b>，6 個人連同 6 份行李全部塞這一台。
       </p><details class="note beware" open="">
@@ -683,6 +801,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d1-2">
       <summary class="act-h">Glacier Brewhouse <span class="meta">19:30 · Sherry 訂 · 市區 · <b>6 人</b></span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Glacier%20Brewhouse%2C%20737%20W%205th%20Ave%2C%20Anchorage%2C%20AK%2099501" target="_blank" rel="noopener">Glacier Brewhouse</a></p>
       
       <p>Eric 說好吃，但帝王蟹可以不點——都是水煮的。自釀啤酒和海鮮湯是強項。投票表上另外三家帝王蟹備選：Simon &amp; Seafort's（Cook Inlet 海景）、49th State Brewing（自釀啤酒配蟹）、Bridge Seafood（蟹腿最好）。</p>
       <details class="note bring" open="">
@@ -695,12 +814,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d1-3">
       <summary class="act-h">Wild Scoops 冰淇淋 · Summit Spice &amp; Tea <span class="meta">飯後 · 伴手禮</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Wild%20Scoops%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Wild Scoops</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Summit%20Spice%20and%20Tea%20Company%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Summit Spice &amp; Tea</a></p>
       
       <p>Summit Spice &amp; Tea 是 Eric 推薦的花草茶店，適合買伴手禮。兩家都在市區，晚上關得早，先查營業時間。</p>
     </details>
 
     <details class="act" id="a-d1-4">
       <summary class="act-h">超市補貨 <span class="meta">Fred Meyer / Carrs · 取車後或隔天早上</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Fred%20Meyer%2C%201000%20E%20Northern%20Lights%20Blvd%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Fred Meyer</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrs%2C%201650%20W%20Northern%20Lights%20Blvd%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Carrs</a></p>
       
       <p>接下來幾天最好在安克拉治一次買齊：水、零食、早餐、保溫瓶飲料、暖暖包。也在這裡買防熊噴霧（不能帶上飛機，回程留下）。</p>
       <details class="note bring" open="">
@@ -713,7 +834,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
   </div>
-  <p class="stay">🏠 <b>Anchorage Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=8010%20Queen%20Victoria%20Drive%2C%20Anchorage%2C%20AK%2099518" target="_blank" rel="noopener">8010 Queen Victoria Drive Unit #1, Anchorage, AK 99518</a> (Mindy 訂)</p>
+  <p class="stay">🏠 <b>Anchorage Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=8010%20Queen%20Victoria%20Drive%2C%20Anchorage%2C%20AK%2099518" target="_blank" rel="noopener">8010 Queen Victoria Drive Unit #1, Anchorage, AK 99518</a> <span class="sep">·</span> <a href="https://www.airbnb.com/rooms/1141022822744055936" target="_blank" rel="noopener">Airbnb 房源</a> (Mindy 訂)</p>
 </article>
 
 <!-- ================= DAY 2 ================= -->
@@ -725,7 +846,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">一天走「南一趟、北一趟」，開車不長但很分散，早點出門。<b>晚上 Samuel 夫妻到 Palmer 會合，全隊到齊。</b></p>
     <p class="legs"><span class="node">Anchorage</span> <span class="arrow">→</span> <span class="dur">40分</span> <span class="arrow">→</span> <span class="node">Girdwood</span> <span class="arrow">→</span> <span class="dur">2時</span> <span class="arrow">→</span> <span class="node">Hatcher Pass</span> <span class="arrow">→</span> <span class="dur">45分</span> <span class="arrow">→</span> <span class="node">Palmer</span></p>
   </div>
-    <p class="sky"><span>日出 <b>07:57</b></span><span>日落 <b>19:42</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b>41%</b></span></p>
+    <p class="sky" data-d="2026-09-27" data-loc="1"><span>日出 <b>07:57</b></span><span>日落 <b>19:42</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b class="wx-pop">43%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v">Snow City / Black Cup 外帶</span></div>
@@ -743,19 +864,22 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       <li><b>14:00–17:30</b> <a class="jump" href="#a-d2-3">Independence Mine + Gold Cord Lake 步道</a>（來回 1.7 英里）</li>
       <li><b>18:00 前</b> 離開停車場（日落 19:42，日落前 1 小時的規則）</li>
       <li><b>18:45</b> 到 Palmer Airbnb</li>
-      <li><b>晚上</b> <a class="jump" href="#a-d2-4">Samuel 夫妻落地 ANC</a>、取第 2 台車、開到 Palmer 會合</li>
+      <li><b>晚上</b><span class="fix">已訂</span> <a class="jump" href="#a-d2-4">Samuel 夫妻落地 ANC</a>、取第 2 台車、開到 Palmer 會合</li>
     </ul>
       </div>
 
   <div class="acts">
     <details class="act" id="a-d2-1">
       <summary class="act-h">早餐：Snow City Cafe / Black Cup / Chugach Mountain Roasters <span class="meta">Anchorage · 開門就去</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Snow%20City%20Cafe%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Snow City Cafe</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Black%20Cup%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Black Cup</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Chugach%20Mountain%20Roasters%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">Chugach Mountain Roasters</a></p>
       
       <p>Snow City Cafe 週日很容易排隊 40 分鐘以上。想準時上山就改買 Black Cup 或 Chugach 外帶。</p>
     </details>
 
     <details class="act" id="a-d2-2">
       <summary class="act-h">Alyeska Aerial Tram 纜車 <span class="meta">10:00–19:00 · 約 $50 線上 / $55 現場 · 2–3 hr</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Alyeska%20Aerial%20Tram%2C%20Girdwood%2C%20AK" target="_blank" rel="noopener">Alyeska 纜車</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Alaska%20Wildlife%20Conservation%20Center%2C%20Portage%2C%20AK%2099587" target="_blank" rel="noopener">AWCC（備案）</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Dalton_Highway_muskox_%2851128337277%29.jpg/960px-Dalton_Highway_muskox_%2851128337277%29.jpg" alt="阿拉斯加的麝香牛" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>阿拉斯加的麝香牛</b><br>BLM Alaska · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Dalton_Highway_muskox_(51128337277).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p>纜車上 Mt. Alyeska 約 600 公尺，看楚加奇山脈和 Turnagain Arm 海灣秋色。今年營運到 10/4，剛好趕上。</p>
       <p><b>備案：山頂在雲裡就往南多開 15 分鐘。</b>Alaska Wildlife Conservation Center 在 Seward Highway Mile 79（Girdwood 再往南 11 英里），<b>9/16–10 月每天 10:00–18:00，成人 $30</b>，最後入場是關門前一小時。園區 200 英畝，主動線是一圈 1.5 英里的環道，<b>可以直接開車繞</b>——下雨天不用下車就看得到棕熊、駝鹿、麝香牛、木野牛、山貓、狼和馴鹿。逛 1.5–2 小時，之後往北開約 2.5 小時到 Hatcher Pass，下午的行程不受影響。這其實是整趟行程裡最容易看到大型動物的地方。</p>
@@ -770,6 +894,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d2-3">
       <summary class="act-h">Hatcher Pass · Independence Mine State Historical Park <span class="meta">遊客中心 6/18–9/30 開放 · 停車 $5 · 4–6 小時</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Independence%20Mine%20State%20Historical%20Park%2C%20Palmer%2C%20AK" target="_blank" rel="noopener">Independence Mine</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Independence_Mine_State_Historical_Park.JPG/960px-Independence_Mine_State_Historical_Park.JPG" alt="Independence Mine 廢棄金礦的木造建築群" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Independence Mine 廢棄金礦的木造建築群</b><br>Switchbladesista · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Independence_Mine_State_Historical_Park.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p>1938 年代廢棄金礦的 13 棟原建築、凍原秋色、山頂的第一場雪。遊客中心 <b>9/30 是今年最後一天</b>，你們 9/27 去剛好還開著。</p>
       <details class="note bring" open="">
@@ -793,6 +919,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d2-4">
       <summary class="act-h">Samuel 夫妻抵達 · Enterprise 取第 2 台車 <span class="meta">ANC 機場 → Palmer · 車程約 50 分鐘</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Ted%20Stevens%20Anchorage%20International%20Airport%2C%20Anchorage%2C%20AK" target="_blank" rel="noopener">ANC 機場</a></p>
       
       <p>自己取第 2 台車，開 Glenn Highway 到 Palmer 的 Airbnb 會合。從明天起全隊 8 人 2 台車。</p>
       <details class="note beware" open="">
@@ -805,7 +932,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
   </div>
-  <p class="stay">🏠 <b>Palmer Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=7201%20Jim%20Cottrell%20Circle%2C%20Palmer%2C%20AK%2099645" target="_blank" rel="noopener">7201 Jim Cottrell Circle, Palmer, AK 99645</a> </p>
+  <p class="stay">🏠 <b>Palmer Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=7201%20Jim%20Cottrell%20Circle%2C%20Palmer%2C%20AK%2099645" target="_blank" rel="noopener">7201 Jim Cottrell Circle, Palmer, AK 99645</a> <span class="sep">·</span> <a href="https://www.airbnb.com/rooms/44943033?check_in=2026-09-27&amp;check_out=2026-09-28" target="_blank" rel="noopener">Airbnb 房源</a> </p>
 </article>
 
 <!-- ================= DAY 3 ================= -->
@@ -817,7 +944,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">上午冰川健行，下午順路走 Thompson Pass South Trail（主方案）；若時間或天氣不合適，移至 9/30 備案。</p>
     <p class="legs"><span class="node">Palmer</span> <span class="arrow">→</span> <span class="dur">1.5時</span> <span class="arrow">→</span> <span class="node">Matanuska</span> <span class="arrow">→</span> <span class="dur">4–4.5時</span> <span class="arrow">→</span> <span class="node">Worthington → South Trail → Bridal Veil Falls → Valdez</span></p>
   </div>
-    <p class="sky"><span>日出 <b>07:56</b></span><span>日落 <b>19:25</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b>59%</b></span></p>
+    <p class="sky" data-d="2026-09-28" data-loc="2"><span>日出 <b>07:56</b></span><span>日落 <b>19:25</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b class="wx-pop">60%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v">The Noisy Goose Cafe</span></div>
@@ -831,11 +958,11 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       <li><b>08:00</b> <a class="jump" href="#a-d3-1">The Noisy Goose Cafe 早餐</a>（今天要吃飽）</li>
       <li><b>09:00</b> 出發（Palmer → 冰川約 1.5 小時）</li>
       <li><b>10:30</b> 抵達 66500 S Glacier Park Rd —— <b>提早 30 分鐘集合，業者不等遲到的人</b></li>
-      <li><b>11:00–13:00</b> <a class="jump" href="#a-d3-2">Matanuska 冰川健行</a></li>
+      <li><b>11:00–13:00</b><span class="fix">已訂</span> <a class="jump" href="#a-d3-2">Matanuska 冰川健行</a></li>
       <li><b>13:00</b> 出發往 Valdez（4–4.5 小時），中途 Glennallen 加油</li>
-      <li><b>16:30</b> <a class="jump" href="#a-d3-3">Worthington Glacier 觀景</a>（MM 28，20 分鐘）</li>
-      <li><b>約 17:00–18:00</b> <a class="jump" href="#a-d3-south">Thompson Pass South Trail</a>（主方案，預留 45–60 分鐘）</li>
-      <li><b>健行後</b> Bridal Veil Falls（MM 13，約 20 分鐘；依剩餘時間調整）</li>
+      <li><b>16:30</b><span class="flexday">9/28 或 9/30</span> <a class="jump" href="#a-d3-3">Worthington Glacier 觀景</a>（MM 28，20 分鐘）</li>
+      <li><b>約 17:00–18:00</b><span class="flexday">9/28 或 9/30</span> <a class="jump" href="#a-d3-south">Thompson Pass South Trail</a>（預留 45–60 分鐘）</li>
+      <li><b>健行後</b><span class="flexday">9/28 或 9/30</span> <a class="jump" href="#a-d3-3">Bridal Veil Falls</a>（MM 13，約 20 分鐘）</li>
       <li><b>約 18:30–19:15</b> 到 Valdez，晚餐順延。新增時間為規劃估算，車程依當日導航與路況調整。</li>
       <li><b>備案切換：</b>超過 17:15 才到步道入口，或遇濃霧、強風、積雪結冰，就跳過並移至 9/30；最晚 18:15 回到停車場。</li>
     </ul>
@@ -844,14 +971,18 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="acts">
     <details class="act" id="a-d3-1">
       <summary class="act-h">早餐：The Noisy Goose Cafe <span class="meta">Palmer · 08:00 前出門</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Noisy%20Goose%20Cafe%2C%20Palmer%2C%20AK" target="_blank" rel="noopener">The Noisy Goose Cafe</a></p>
       
       <p>今天要吃飽。下一頓正餐可能是晚上到 Valdez 才吃得到。</p>
     </details>
 
     <details class="act" id="a-d3-2">
-      <summary class="act-h">Matanuska Glacier Hiking <span class="meta">11:00 · 2 小時 · Sherry 訂 · Glenn Hwy MM 102</span></summary>
+      <summary class="act-h">Matanuska Glacier Hiking <span class="meta">11:00 · 2 小時 · Sherry 訂 · 66500 S Glacier Park Rd</span></summary>
+      <p class="maps">📍 <a href="https://maps.app.goo.gl/7AcYqDKVBfRToYJw8" target="_blank" rel="noopener">集合點 · 66500 S Glacier Park Rd</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Glaciar_Matanuska%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_68.jpg/960px-Glaciar_Matanuska%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_68.jpg" alt="Matanuska 冰川的冰面與裂隙" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Matanuska 冰川的冰面與裂隙</b><br>Diego Delso · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Glaciar_Matanuska,_Alaska,_Estados_Unidos,_2017-08-22,_DD_68.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p>九月底整趟唯一能<b>真正走上去</b>的冰川：冰面、藍冰、裂縫、冰洞。業者提供冰爪（microspikes）、安全帽、園區通行。</p>
+      <p><b>集合點：66500 S Glacier Park Rd</b>——走 Glenn Highway 到 <b>Mile 102 轉進 S Glacier Park Rd</b>。不要導航到「Matanuska Glacier State Recreation Site」，那是 MM 101 的州立觀景區，不是業者的集合點。</p>
       <details class="note bring" open="">
         <summary class="lbl">帶什麼<span class="cnt">4</span></summary>
         <ul>
@@ -881,6 +1012,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d3-3">
       <summary class="act-h">路邊停靠：Worthington Glacier · Bridal Veil Falls <span class="meta">Richardson Hwy MM 28 / MM 13 · 各約 20 分鐘</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Worthington%20Glacier%20State%20Recreation%20Site%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Worthington Glacier</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Bridal%20Veil%20Falls%2C%20Keystone%20Canyon%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Bridal Veil Falls</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez%2C_Alaska.jpg/960px-View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez%2C_Alaska.jpg" alt="從 Richardson Highway 路邊看 Worthington 冰川" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>從 Richardson Highway 路邊看 Worthington 冰川</b><br>OKJaguar · CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez,_Alaska.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p>翻過 Thompson Pass 下到 Valdez 的這段是全程最美的公路。<b>今天兩個觀景停靠點之間加入 South Trail 短程健行</b>：Worthington Glacier 在 MM 28，停車場就能看到冰川，走幾步到前緣觀景點；Bridal Veil Falls 在 MM 13，400 呎瀑布就在路邊，下車拍完就走。</p>
       <details class="note beware" open="">
@@ -895,12 +1028,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     </details>
 <details class="act" id="a-d3-south">
       <summary class="act-h">Thompson Pass South Trail · 主方案 <span class="meta">9/28 · 約 1 英里（1.6 公里）· 預留 45–60 分鐘</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Thompson%20Pass%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Thompson Pass</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Thompson_Pass_ENBLA01.jpg/960px-Thompson_Pass_ENBLA01.jpg" alt="Thompson Pass 山口景色" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Thompson Pass 山口景色</b><br>Enrico Blasutto · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Thompson_Pass_ENBLA01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       <p>安排在 Worthington Glacier 之後、Bridal Veil Falls 之前，只走 South Trail。八人同行，時間包含拍照、上下車。</p>
       <p><b>超過 17:15 才到入口，或遇濃霧、強風、積雪結冰，就改 9/30。</b>最晚 18:15 回停車場；天候或步速不允許時提早折返。</p>
       <p>穿防水鞋，帶防風保暖層。<a href="https://www.alltrails.com/us/alaska/valdez/easy" target="_blank" rel="noopener">步道資料</a>。時間為規劃估算，依當日路況調整。</p>
     </details>
   </div>
-  <p class="stay">🏠 <b>Valdez Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=312%20Robe%20River%20Drive%2C%20Valdez%2C%20AK%2099686" target="_blank" rel="noopener">312 Robe River Drive, Valdez</a> &nbsp;·&nbsp; 第 1 晚（共 2 晚）</p>
+  <p class="stay">🏠 <b>Valdez Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=312%20Robe%20River%20Drive%2C%20Valdez%2C%20AK%2099686" target="_blank" rel="noopener">312 Robe River Drive, Valdez</a> <span class="sep">·</span> <a href="https://www.airbnb.com/rooms/1080437935113587700?check_in=2026-09-28&amp;check_out=2026-09-30" target="_blank" rel="noopener">Airbnb 房源</a> &nbsp;·&nbsp; 第 1 晚（共 2 晚）</p>
 </article>
 
 <!-- ================= DAY 4 ================= -->
@@ -912,7 +1047,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">全團最高票的行程。早上在 Valdez 吃早餐、自由活動並準備獨木舟，11:30 到湖邊集合。South Trail 已排 9/28，9/30 為備案。</p>
     <p class="legs"><span class="node">Valdez</span> → <span class="dur">15分</span> → <span class="node">Glacier Lake</span> → <span class="dur">15分</span> → <span class="node">市區</span> → <span class="dur">10分</span> → <span class="node">Solomon Gulch</span></p>
   </div>
-    <p class="sky"><span>日出 <b>07:47</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~21:50</b></span><span>降雨 <b>58%</b></span></p>
+    <p class="sky" data-d="2026-09-29" data-loc="2"><span>日出 <b>07:47</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~21:50</b></span><span>降雨 <b class="wx-pop">51%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · Valdez 悠閒吃早餐</span></div>
@@ -926,7 +1061,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       <li><b>上午</b> Valdez 早餐、自由活動，準備防水保暖衣物與替換衣服</li>
       <li><b>11:00 左右</b> 整裝出發，預留停車及報到時間</li>
       <li><b>11:30</b> 到 Valdez Glacier Lake 集合（過機場沿 Airport Road 開到底，不是港口）</li>
-      <li><b>12:00–14:30</b> 獨木舟（Sherry 已付款，報名字即可）</li>
+      <li><b>12:00–14:30</b><span class="fix">已訂</span> 獨木舟（Sherry 已付款，報名字即可）</li>
       <li><b>15:00</b> 上岸，回車上換乾衣服</li>
       <li><b>15:30</b> <a class="jump" href="#a-d4-3">Nat Shack 午餐</a>（出發前一週先確認有開）</li>
       <li><b>16:30</b> <a class="jump" href="#a-d4-4">Solomon Gulch Hatchery</a>（Dayville Rd，車程 10 分鐘）</li>
@@ -937,6 +1072,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="acts">
     <details class="act" id="a-d4-2">
       <summary class="act-h">Valdez Glacier Lake Canoe <span class="meta">12:00 · 2–3 小時 · Alaska Guide Co. · $205 / 成人 · Sherry 訂</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Valdez%20Glacier%20Lake%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Valdez Glacier Lake</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Valdez_Glacier_ENBLA05.jpg/960px-Valdez_Glacier_ENBLA05.jpg" alt="Valdez 冰川與冰川湖" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Valdez 冰川與冰川湖</b><br>Enrico Blasutto · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Valdez_Glacier_ENBLA05.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p>划獨木舟穿梭大型藍色冰山之間，條件允許時可以上冰山、鑽冰洞。<b>集合點是 Valdez Glacier Lake 本人</b>——過了機場沿 Airport Road 開到底，不是港口那邊，兩台車直接開過去（鎮上約 15 分鐘）。八人剛好是一艘大獨木舟的容量。</p>
       <details class="note bring" open="">
@@ -968,12 +1105,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d4-3">
       <summary class="act-h">午餐：Nat Shack <span class="meta">Valdez · 魚肉卷 / Halibut tacos</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Nat%20Shack%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Nat Shack</a></p>
       
       <p>台灣 blogger 推薦。Valdez 的餐廳在旅遊季結束後會陸續關門或縮短時間，出發前先打電話確認還開著。</p>
     </details>
 
     <details class="act" id="a-d4-4">
       <summary class="act-h">Solomon Gulch Hatchery 看鮭魚 <span class="meta">Dayville Rd · 距鎮上 10 分鐘 · 免費</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Solomon%20Gulch%20Hatchery%2C%20Dayville%20Road%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Solomon Gulch Hatchery</a></p>
       
       <p>阿拉斯加少數開車就能看熊的地方。</p>
       <details class="note beware" open="">
@@ -985,7 +1124,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
   </div>
-  <p class="stay">🏠 <b>Valdez Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=312%20Robe%20River%20Drive%2C%20Valdez%2C%20AK%2099686" target="_blank" rel="noopener">312 Robe River Drive</a> &nbsp;·&nbsp; 第 2 晚 </p>
+  <p class="stay">🏠 <b>Valdez Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=312%20Robe%20River%20Drive%2C%20Valdez%2C%20AK%2099686" target="_blank" rel="noopener">312 Robe River Drive</a> <span class="sep">·</span> <a href="https://www.airbnb.com/rooms/1080437935113587700?check_in=2026-09-28&amp;check_out=2026-09-30" target="_blank" rel="noopener">Airbnb 房源</a> &nbsp;·&nbsp; 第 2 晚 </p>
 </article>
 
 <!-- ================= DAY 5 ================= -->
@@ -993,14 +1132,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="day-head">
     <div class="day-head-main">
     <p class="day-n"><span>第 <b>05</b> 天</span><span class="sep">·</span><span>9/30 三</span><span class="sep">·</span><span class="place">Valdez → Fairbanks</span></p>
-    <h2>藍色冰洞，和第一個極光晚上</h2>
-    <p class="tagline">一路向北，中間停 Castner。若 9/28 已完成 South Trail，維持原時間表；若未完成且天候適合，08:30 出發啟用步道備案。</p>
-    <p class="legs"><span class="node">Valdez</span> <span class="arrow">→</span> <span class="dur">4時</span> <span class="arrow">→</span> <span class="node">Castner</span> <span class="arrow">→</span> <span class="dur">2.5時</span> <span class="arrow">→</span> <span class="node">Fairbanks</span></p>
+    <h2>一路向北，和第一個極光晚上</h2>
+    <p class="tagline"><b>Castner 冰洞已取消</b>（洞頂和地基不穩）。今天變成單純的長途拉車日，反而有餘裕把 9/28 沒走完的 Thompson Pass 三個點補回來。</p>
+    <p class="legs"><span class="node">Valdez</span> <span class="arrow">→</span> <span class="dur">2.5時</span> <span class="arrow">→</span> <span class="node">Glennallen</span> <span class="arrow">→</span> <span class="dur">4.5時</span> <span class="arrow">→</span> <span class="node">Fairbanks</span></p>
   </div>
-    <p class="sky"><span>日出 <b>07:50</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b>19%</b></span><span class="aur">雲量 <b>97%</b></span><span class="aur">月亮 <b>83%</b></span></p>
+    <p class="sky" data-d="2026-09-30" data-loc="3"><span>日出 <b>07:50</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b class="wx-pop">7%</b></span><span class="aur">雲量 <b class="wx-cc">73%</b></span><span class="aur">月亮 <b>83%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
-    <div><span class="m-l">早餐</span><span class="m-v none">待定 · 一般 10:00 出發；啟用備案則 08:30 前吃完</span></div>
+    <div><span class="m-l">早餐</span><span class="m-v none">待定 · 08:30 出發前在 Valdez 吃完</span></div>
     <div><span class="m-l">午餐</span><span class="m-v">Glennallen 加油順便吃</span></div>
     <div><span class="m-l">晚餐</span><span class="m-v none">待定 · 約 18:15 到 Fairbanks</span></div>
   </div>
@@ -1008,50 +1147,55 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="sched">
         <p class="sched-h">今天的時間表</p>
         <ul>
-      <li><b>一般方案 10:00</b> 離開 Valdez（9/28 已完成 South Trail；行李前一晚打包好）</li>
-      <li><b>僅備案：08:30 出發，約 09:15–10:00</b> <a class="jump" href="#a-d5-south">Thompson Pass South Trail</a>；若需完整 60 分鐘，提早抵達或依行程餘裕調整。</li>
-      <li><b>北上至約 14:00</b> 沿 Richardson Highway 前往 Castner，中途 Glennallen 加油和午餐；一般方案從 Valdez 出發，備案從 South Trail 接續北上。</li>
-      <li><b>14:00–15:45</b> <a class="jump" href="#a-d5-1">Castner 冰洞</a>，抓 1.5–2 小時</li>
-      <li><b>15:45–18:15</b> 開到 Fairbanks，日落 19:21 前到</li>
-      <li><b>硬底線：16:30 一定要離開 Castner。</b>在那之後每多留 30 分鐘，就多 30 分鐘摸黑開 Richardson Highway。</li>
+      <li><b>08:30</b> 離開 Valdez（行李前一晚打包好）</li>
+      <li><b>08:45–11:00</b><span class="flexday">9/28 或 9/30</span> <a class="jump" href="#a-d5-south">Bridal Veil Falls · Worthington · Thompson Pass South Trail</a> —— 9/28 沒走完的補在這裡</li>
+      <li><b>約 12:10</b> <a class="jump" href="#a-d5-roadside">MM 87 Willow Lake</a>（15 分鐘，有餘裕才停）</li>
+      <li><b>13:00–13:45</b> Glennallen 加油 + 午餐（MM 118）</li>
+      <li><b>約 15:05</b> <a class="jump" href="#a-d5-roadside">MM 188 休息區</a> 上廁所；北段最後一個有廁所的地方</li>
+      <li><b>15:30 / 16:05</b> <a class="jump" href="#a-d5-roadside">MM 195 Summit Lake</a>、<a class="jump" href="#a-d5-roadside">MM 209 Rainbow Mountain</a>（找 Dall sheep，各 15 分鐘，有餘裕才停）</li>
+      <li><b>18:00–19:00</b> 到 Fairbanks（日落 19:21）</li>
+      <li><b>取捨</b> 三個 Thompson Pass 點全做 <b>加上</b> 北段全停，會拖到 19:00 才到。二選一比較舒服。</li>
     </ul>
       </div>
 
   <div class="acts">    
 
     <details class="act" id="a-d5-south">
-      <summary class="act-h">Thompson Pass South Trail · 僅備案 <span class="meta">9/28 未完成才啟用 · 08:30 離開 Valdez</span></summary>
-      <p>預估約 09:15 抵達，預留 45–60 分鐘，之後往 Glennallen。時間為規劃估算，依當日導航、路況與團員步速調整。</p>
-      <p>Castner 仍以 14:00 左右開始、15:45 左右離開為目標，不因補走步道順延；若無足夠餘裕或山口天候不佳，就取消步道備案。</p>
+      <summary class="act-h">Thompson Pass 三個點 · 9/28 沒走完就補在今天 <span class="meta">MM 13 / MM 28 / South Trail · 08:30 離開 Valdez</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Thompson%20Pass%2C%20Valdez%2C%20AK" target="_blank" rel="noopener">Thompson Pass</a></p>
+      <p><b>Bridal Veil Falls（MM 13）、Worthington Glacier（MM 28）、Thompson Pass South Trail 這三個點，去程和回程都會經過</b>——9/28 從 Palmer 下 Valdez 時經過一次，9/30 北上時原路再經過一次。所以哪天走都可以，看 9/28 那天實際幾點翻過 Thompson Pass。</p>
+      <p>如果 9/28 那天已經走完了，今天就什麼都不用補，<b>10:00 再出門也來得及</b>，北段可以慢慢停。</p>
+      <p>山口天候不好（濃霧、強風、結霜）就整個跳過，別在 Thompson Pass 上趕時間。</p>
     </details>
-    <details class="act" id="a-d5-1">
-      <summary class="act-h">Castner Glacier Ice Cave <span class="meta">Richardson Hwy MM 217.3 · 來回 2.6 英里 · 免費 · 1.5–2 小時</span></summary>
-      
-      <p>大部分旅遊書沒寫的地方，冰洞內部藍綠色透光。停車場就在公路邊 MM 217–218 之間，過馬路從 Castner Creek 小橋旁進去，沿溪床往上游走。</p>
+    <details class="act" id="a-d5-roadside">
+      <summary class="act-h">Richardson Highway 沿路停靠點 <span class="meta">MM 87 → MM 209 · 各 10–15 分鐘 · 免費</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Willow%20Lake%20Wayside%2C%20Richardson%20Highway%2C%20Alaska" target="_blank" rel="noopener">MM 87 Willow Lake</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Wrangell-St.%20Elias%20Visitor%20Center%2C%20Copper%20Center%2C%20AK" target="_blank" rel="noopener">MM 107 Wrangell–St. Elias 遊客中心</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Copper%20Valley%20Air%20Service%2C%20Glennallen%2C%20AK" target="_blank" rel="noopener">MM 118 加油 · Copper Valley Air Service</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Summit%20Lake%2C%20Paxson%2C%20Alaska" target="_blank" rel="noopener">MM 195 Summit Lake</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Rainbow%20Mountain%20View%20Point%2C%20Alaska" target="_blank" rel="noopener">MM 209 Rainbow Mountain</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Birch%20Lake%20State%20Recreation%20Site%2C%20Alaska" target="_blank" rel="noopener">MM 305 Birch Lake</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Rainbow_Mountain_-_Rainbow_Ridge.jpg/960px-Rainbow_Mountain_-_Rainbow_Ridge.jpg" alt="Rainbow Mountain／Rainbow Ridge，從 Richardson Highway MM 209 附近看過去，下方是 Phelan Creek" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Rainbow Mountain／Rainbow Ridge，從 Richardson Highway MM 209 附近看過去，下方是 Phelan Creek</b><br>sf-dvs · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Rainbow_Mountain_-_Rainbow_Ridge.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+
+      <p>Valdez 到 Fairbanks 是 368 英里，<b>光是開車就要 7–7.5 小時</b>，中間還要在 Glennallen 加油吃飯。Castner 取消後沒有硬底線了，但天黑前到還是目標（日落 19:21）。下面按<b>行車順序</b>排（由南往北），真的趕就只停標「最推薦」的 Rainbow Mountain。</p>
       <details class="note bring" open="">
-        <summary class="lbl">帶什麼<span class="cnt">4</span></summary>
+        <summary class="lbl">沿路停靠點 · 由南往北<span class="cnt">5</span></summary>
         <ul>
-          <li><b>高筒防水靴。</b>九月溪水還沒結冰，這條「步道」大半就是溪床，一定會踩水。</li>
-          <li><b>登山杖（選配）</b>——過水時穩住身體，石頭很滑。沒帶的話撿一根樹枝也行，但有杖差很多。</li>
-          <li><b>頭燈</b>（洞內很暗）、冰爪、備用襪子放車上。</li>
-          <li><b>離線地圖 / GPS 座標。</b>沒有指示牌，也<b>完全沒有手機訊號</b>。出發前告訴另一台車你們的計畫時間。</li>
+          <li><b>MM 87 Willow Lake 觀景點</b>——Wrangell 山脈的 Drum、Wrangell、Sanford 三座山倒映在湖面，這段路最好的一張照片。在 Glennallen 之前，10–15 分鐘。</li>
+          <li><b>MM 188 休息區 —— 上廁所。</b>北段路上最後一個有正式廁所的地方，過了這裡到 Delta Junction 都沒有。</li>
+          <li><b>MM 195 Summit Lake</b>——阿拉斯加山脈南側的高山湖，就在休息區北邊 7 英里，15 分鐘。</li>
+          <li><b>MM 209.1 Rainbow Mountain 觀景點 —— 最推薦。</b>觀景停車彎在路的東側。鏽紅色岩層從 MM 206 延伸約 3 英里，<b>深色山坡上常有白色的 Dall sheep（白大角羊）</b>，找白點、帶望遠鏡。停 10–15 分鐘。</li>
+          <li><b>MM 305 Birch Lake（選配）</b>——往 Fairbanks 路上的最後一站，有廁所和野餐桌。<b>只有在 17:00 前經過</b>才停。</li>
         </ul>
       </details>
       <details class="note beware" open="">
-        <summary class="lbl">注意：這是全程風險最高的行程<span class="cnt">5</span></summary>
+        <summary class="lbl">注意<span class="cnt">2</span></summary>
         <ul>
-          <li><b>冰洞會塌，而且頂部會掉冰塊和石頭。</b>洞口近年已經部分坍塌。建議在洞口拍照就好，不要走到洞裡深處、不要在天花板下久待。</li>
-          <li><b>冰川湖潰決（jökulhlaup）</b>可能毫無預警地讓溪水暴漲。溪水<b>午後最大</b>（整天融水累積），所以 15:00 到比早上到水位高——過溪時更要互相照應，水看起來急就退回來，不值得為一個冰洞冒險。</li>
-          <li>冰磧地形在無雪季節有<b>軟泥陷阱</b>，可能陷到膝蓋。兩人一組、不要單獨走前面。</li>
-          <li>這一帶<b>有熊</b>。走路出聲、噴霧放在腰上（不是背包裡）。</li>
-          <li>Richardson Highway 這一段九月底可能已經結冰，<b>天黑前要離開</b>。</li>
+          <li><b>Wrangell–St. Elias 遊客中心（MM 107）開不開是問號，出發前打電話確認：907-822-5234。</b>國家公園的營運時間頁和 2026 年公告都寫季節是 <b>5/11–9/20</b>，但官網行事曆頁顯示 9/30 開 9:00–17:00——而那個行事曆同一天把 Kennecott 同時列成 Open 和 Closed，明顯不可靠。<b>所以廁所計畫一律用 MM 188 休息區</b>；打電話確認有開的話，這裡是 MM 107 的一個乾淨停靠點，但只當 10 分鐘上廁所用，不要排 45 分鐘參觀，時間不夠。</li>
+          <li><b>Bridal Veil Falls（MM 13）9/28 從 Thompson Pass 下來時已經停過</b>，今天不用再停。</li>
         </ul>
       </details>
-      <p style="color:var(--ink-3);font-size:15px">投票表寫「九月最佳」，但查到的資料是<b>十月到四月溪水結冰後才好走</b>，九月要涉水。所以時間抓 1.5–2 小時、防水靴是必備。</p>
     </details>
 
     <details class="act" id="a-d5-2">
       <summary class="act-h">極光第 1 晚（選配） <span class="meta">Cleary Summit（FAI 東北 30 分）/ Murphy Dome（西北 45 分）· 免費</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Cleary%20Summit%2C%20Alaska" target="_blank" rel="noopener">Cleary Summit</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Murphy%20Dome%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">Murphy Dome</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Aurora_-_Fairbanks.jpg/960px-Aurora_-_Fairbanks.jpg" alt="Fairbanks 的極光" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Fairbanks 的極光</b><br>Deepti Hari · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Aurora_-_Fairbanks.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p><b>不強求。</b>今天開了一整天，晚上看兩件事再決定：天空有沒有雲、大家還有沒有力氣。目前預報 9/30 費爾班克斯雲量 97%（不過 15 天外的預報參考就好）。後面還有 10/1 和 10/2 兩晚，10/2 月亮最暗。</p>
       <details class="note bring" open="">
@@ -1074,7 +1218,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
   </div>
-  <p class="stay">🏠 <b>Fairbanks Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=446%20Summer%20Avenue%2C%20Fairbanks%2C%20AK%2099712" target="_blank" rel="noopener">446 Summer Avenue, Fairbanks, AK 99712</a> (Shumin 訂) · 連住 3 晚</p>
+  <p class="stay">🏠 <b>Fairbanks Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=446%20Summer%20Avenue%2C%20Fairbanks%2C%20AK%2099712" target="_blank" rel="noopener">446 Summer Avenue, Fairbanks, AK 99712</a> <span class="sep">·</span> <a href="https://www.airbnb.com/trips/shared/4ea995d2-871e-45cc-a601-86352f4d7dd5?confCode=HMCNKM55WJ&amp;principal_token=92870529-1304-4c9f-9ed6-dea7f59f02f3" target="_blank" rel="noopener">Airbnb 訂單</a> (Shumin 訂) · 連住 3 晚</p>
 </article>
 
 <!-- ================= DAY 6 ================= -->
@@ -1086,7 +1230,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">日夜顛倒日。白天睡飽，下午出發，晚上直接在岩石池裡看極光。</p>
     <p class="legs"><span class="node">Fairbanks</span> <span class="arrow">→</span> <span class="dur">1.5時</span> <span class="arrow">→</span> <span class="node">Chena Hot Springs</span> <span class="arrow">→</span> <span class="dur">1.5時</span> <span class="arrow">→</span> <span class="node">Fairbanks</span></p>
   </div>
-    <p class="sky"><span>日出 <b>08:01</b></span><span>日落 <b>19:17</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b>無預報</b></span><span class="aur">雲量 <b>無預報</b></span><span class="aur">月亮 <b>73%</b></span></p>
+    <p class="sky" data-d="2026-10-01" data-loc="4"><span>日出 <b>08:01</b></span><span>日落 <b>19:17</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b class="wx-pop">14%</b></span><span class="aur">雲量 <b class="wx-cc">89%</b></span><span class="aur">月亮 <b>73%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · 睡到自然醒，自理</span></div>
@@ -1113,12 +1257,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="acts">
     <details class="act" id="a-d6-1">
       <summary class="act-h">Alyeska Pipeline Viewing Point <span class="meta">Steese Hwy · 免費 · 20 分鐘 · 順路</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Trans%20Alaska%20Pipeline%20Viewpoint%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">油管觀景點</a></p>
       
       <p>往 Chena Hot Springs 的路就是 Steese Highway，油管觀景點正好在路上。停車走幾步就到，看完再右轉進 Chena Hot Springs Road。</p>
     </details>
 
     <details class="act" id="a-d6-2">
       <summary class="act-h">Aurora Ice Museum <span class="meta">入場 $20 + Appletini $20 · 1 小時 · 需先訂</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Aurora%20Ice%20Museum%2C%20Chena%20Hot%20Springs%2C%20AK" target="_blank" rel="noopener">Aurora Ice Museum</a></p>
       
       <p>世界最大的全年冰建築，內部維持 <b>−7°C (25°F)</b>。大衣現場提供。用冰杯喝 Appletini 是這裡唯一的招牌。</p>
       <details class="note beware" open="">
@@ -1134,6 +1280,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
 
     <details class="act" id="a-d6-3">
       <summary class="act-h">Chena Hot Springs Rock Lake 溫泉 <span class="meta">戶外岩石池 ~41°C · 泳池區 07:00–22:30 · 約 $25</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Chena%20Hot%20Springs%20Resort%2C%20Chena%20Hot%20Springs%2C%20AK" target="_blank" rel="noopener">Chena Hot Springs Resort</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Outdoor_pool_Chena_Hot_Springs.jpg/960px-Outdoor_pool_Chena_Hot_Springs.jpg" alt="Chena Hot Springs 的戶外岩石池" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Chena Hot Springs 的戶外岩石池</b><br>Nina Matthews · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Outdoor_pool_Chena_Hot_Springs.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
       
       <p>戶外岩石池是這趟最舒服的極光位置：泡在 41°C 的水裡，頭頂就是天空。</p>
       <details class="note bring" open="">
@@ -1162,7 +1310,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       <p>月亮 73%，比昨天好一點。泡在水裡等是最不痛苦的等法，但別在水裡睡著。</p>
     </details>
   </div>
-  <p class="stay">🏠 <b>Fairbanks Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=446%20Summer%20Avenue%2C%20Fairbanks%2C%20AK%2099712" target="_blank" rel="noopener">446 Summer Avenue</a></p>
+  <p class="stay">🏠 <b>Fairbanks Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=446%20Summer%20Avenue%2C%20Fairbanks%2C%20AK%2099712" target="_blank" rel="noopener">446 Summer Avenue</a> <span class="sep">·</span> <a href="https://www.airbnb.com/trips/shared/4ea995d2-871e-45cc-a601-86352f4d7dd5?confCode=HMCNKM55WJ&amp;principal_token=92870529-1304-4c9f-9ed6-dea7f59f02f3" target="_blank" rel="noopener">Airbnb 訂單</a></p>
 </article>
 
 <!-- ================= DAY 7 ================= -->
@@ -1174,7 +1322,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">白天彈性安排，晚上是最後一個極光晚上——也是月亮最暗的一晚（62%）。</p>
     <p class="legs"><span class="node">Fairbanks</span> <span class="arrow">→</span> <span class="dur">15分</span> <span class="arrow">→</span> <span class="node">UAF / 市區</span></p>
   </div>
-    <p class="sky"><span>日出 <b>08:04</b></span><span>日落 <b>19:13</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b>無預報</b></span><span class="aur">雲量 <b>無預報</b></span><span class="aur">月亮 <b>62%</b></span></p>
+    <p class="sky" data-d="2026-10-02" data-loc="3"><span>日出 <b>08:04</b></span><span>日落 <b>19:13</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b class="wx-pop">10%</b></span><span class="aur">雲量 <b class="wx-cc">100%</b></span><span class="aur">月亮 <b>62%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · Fairbanks 自理</span></div>
@@ -1189,7 +1337,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       <li><b>10:00–12:00</b> <a class="jump" href="#a-d7-1">UA Museum of the North</a>（冬季時間 9:00–17:30，比夏天早 1.5 小時關）</li>
       <li><b>12:30</b> 市區午餐自理，再去 <a class="jump" href="#a-d7-2">The Crepery</a> 吃甜點</li>
       <li><b>13:30–14:30</b> <a class="jump" href="#a-d7-3">Morris Thompson 文化與遊客中心</a>（免費 · 走路 8 分鐘 · 17:00 關）</li>
-      <li><b>下午</b> 補眠 或 選配（二選一，或都不去）<a class="jump" href="#a-d7-4">Chena River 銀鮭釣</a>（4–5 小時 · 需先訂）、<a class="jump" href="#a-d7-5">Wedgewood 保護區 + Creamer’s Field</a>（17:45–19:00 · 免費 · 黃昏找駝鹿）</li>
+      <li><b>下午</b> 補眠 或 選配 <a class="jump" href="#a-d7-4">Wedgewood 保護區 + Creamer’s Field</a>（17:45–19:00 · 免費 · 黃昏找駝鹿）、<a class="jump" href="#a-d7-5">Chena River 銀鮭釣</a>（4–5 小時 · 需先訂）</li>
       <li><b>22:00 起</b> <a class="jump" href="#a-d7-6">極光第 3 晚</a>，換一個跟前兩晚不同方位的點（月亮 62%，三晚最暗）</li>
       <li><b>02:00</b> 硬性下山時間 —— 明天有飛機</li>
     </ul>
@@ -1198,37 +1346,29 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="acts">
     <details class="act" id="a-d7-1">
       <summary class="act-h">UA Museum of the North <span class="meta">UAF 校區 · 9:00–17:30 · 約 $20 · 2 小時</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=University%20of%20Alaska%20Museum%20of%20the%20North%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">UA Museum of the North</a></p>
       
       <p>阿拉斯加最大的博物館：原住民文物、長毛象骨骼、極光科學展。下雨或想補眠的最佳去處。<b>冬季時間 9/16–5/16，每天 9:00–17:30，一週七天</b>——我們去的時候已經是冬季時間，比夏天早一個半小時關門，別排太晚。</p>
     </details>
 
     <details class="act" id="a-d7-2">
       <summary class="act-h">Fairbanks Downtown · The Crepery <span class="meta">523 2nd Ave · 甜點</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Crepery%2C%20523%202nd%20Ave%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">The Crepery</a></p>
 
       <p><b>The Crepery 是甜點店，不是正餐</b>——午餐先在市區自己找，吃飽再過去當飯後甜點。市區不大，餐廳都在走路範圍內。Crepery 在 523 2nd Ave，離下一站 Morris Thompson 走路約 8 分鐘。</p>
     </details>
 
     <details class="act" id="a-d7-3">
       <summary class="act-h">Morris Thompson 文化與遊客中心 <span class="meta">101 Dunkel St · 免費 · 8:00–17:00 · 1 小時</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Morris%20Thompson%20Cultural%20and%20Visitors%20Center%2C%20101%20Dunkel%20St%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">Morris Thompson Center</a></p>
 
       <p>離 The Crepery 走路約 8 分鐘，<b>完全免費</b>。裡面是阿拉斯加內陸的自然與原住民文化常設展——potlatch 傳統宴會展示、野生動物立體模型、四季變化的互動展。<b>另外有兩個服務台</b>：Explore Fairbanks 遊客中心，和 Alaska Public Lands Information Center——後者的巡山員可以問到即時路況、步道和小屋狀況，<b>晚上要開去 Murphy Dome 或 Cleary Summit 看極光之前，這裡是問路況最準的地方</b>。館內還有 Alaska Geographic 書店和 Denakkanaaga 原住民手工藝店，買紀念品比機場划算。冬季時間 9/4–12/31 每天 8:00–17:00，一週七天。</p>
     </details>
 
     <details class="act" id="a-d7-4">
-      <summary class="act-h">Chena River 銀鮭釣（選配） <span class="meta">4–5 小時 · ~$175 + 執照 $15 · 至 10/15</span></summary>
-      
-      <p>九月是 silver salmon (Coho) 的高峰尾聲，業者提供裝備、餌和嚮導，不需要經驗。</p>
-      <details class="note bring" open="">
-        <summary class="lbl">帶什麼<span class="cnt">2</span></summary>
-        <ul>
-          <li>阿拉斯加釣魚執照（$15，可線上買，當天生效）。</li>
-          <li>防水外套 + 防水手套 + 保暖層；在船上或岸邊站 4 小時不動很冷。</li>
-        </ul>
-      </details>
-    </details>
-
-    <details class="act" id="a-d7-5">
       <summary class="act-h">Wedgewood 野生動物保護區 + Creamer’s Field（選配） <span class="meta">212 Wedgewood Dr · 免費 · 24 小時開放 · 1–1.5 小時</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Wedgewood%20Wildlife%20Sanctuary%2C%20212%20Wedgewood%20Dr%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">Wedgewood Sanctuary</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Creamer%27s%20Field%20Migratory%20Waterfowl%20Refuge%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">Creamer's Field</a></p>
+      <figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Creamer%27s_Field_Fairbanks_Alaska.jpg/960px-Creamer%27s_Field_Fairbanks_Alaska.jpg" alt="Creamer's Field 的草原與步道" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="var f=this.closest('figure'); if(f) f.style.display='none';"><figcaption><b>Creamer's Field 的草原與步道</b><br>RadioKAOS · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Creamer%27s_Field_Fairbanks_Alaska.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
 
       <p>就在市區，碎石壓實步道幾乎沒有坡：Taiga Loop 0.65 哩、Wander Lake Loop 再 0.8 哩，八個人慢慢走一圈約一小時。<b>這裡的步道直接連通 Creamer’s Field</b>，兩個點可以一趟走完。官方紀錄有 15 種哺乳類（河狸、赤狐、飛鼠、雪鞋兔、駝鹿）和 100 多種鳥，湖邊有一個賞鳥掩體。停車停 Fountainhead 古董車博物館的停車場，穿過展示區走到登山口。</p>
       <details class="note bring" open="">
@@ -1251,8 +1391,22 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
 
+    <details class="act" id="a-d7-5">
+      <summary class="act-h">Chena River 銀鮭釣（選配） <span class="meta">4–5 小時 · ~$175 + 執照 $15 · 至 10/15</span></summary>
+      
+      <p>九月是 silver salmon (Coho) 的高峰尾聲，業者提供裝備、餌和嚮導，不需要經驗。</p>
+      <details class="note bring" open="">
+        <summary class="lbl">帶什麼<span class="cnt">2</span></summary>
+        <ul>
+          <li>阿拉斯加釣魚執照（$15，可線上買，當天生效）。</li>
+          <li>防水外套 + 防水手套 + 保暖層；在船上或岸邊站 4 小時不動很冷。</li>
+        </ul>
+      </details>
+    </details>
+
     <details class="act" id="a-d7-6">
       <summary class="act-h">極光第 3 晚 <span class="meta">換一個方位 · Murphy Dome 或 Cleary Summit</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Murphy%20Dome%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">Murphy Dome</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Cleary%20Summit%2C%20Alaska" target="_blank" rel="noopener">Cleary Summit</a></p>
       
       <p>最後一晚，月亮 62% 是這三晚最暗的。建議<b>換一個跟前兩晚不同方位的點</b>——費爾班克斯的雲常常只蓋住半邊天。</p>
       <details class="note beware" open="">
@@ -1264,7 +1418,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
     </details>
   </div>
-  <p class="stay">🏠 <b>Fairbanks Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=446%20Summer%20Avenue%2C%20Fairbanks%2C%20AK%2099712" target="_blank" rel="noopener">446 Summer Avenue</a></p>
+  <p class="stay">🏠 <b>Fairbanks Airbnb</b> — <a href="https://www.google.com/maps/search/?api=1&amp;query=446%20Summer%20Avenue%2C%20Fairbanks%2C%20AK%2099712" target="_blank" rel="noopener">446 Summer Avenue</a> <span class="sep">·</span> <a href="https://www.airbnb.com/trips/shared/4ea995d2-871e-45cc-a601-86352f4d7dd5?confCode=HMCNKM55WJ&amp;principal_token=92870529-1304-4c9f-9ed6-dea7f59f02f3" target="_blank" rel="noopener">Airbnb 訂單</a></p>
 </article>
 
 <!-- ================= DAY 8 ================= -->
@@ -1276,7 +1430,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">輕鬆收行李，早點到機場。</p>
     <p class="legs"><span class="node">Airbnb</span> <span class="arrow">→</span> <span class="dur">20分</span> <span class="arrow">→</span> <span class="node">FAI 機場</span></p>
   </div>
-    <p class="sky"><span>日出 <b>08:07</b></span><span>日落 <b>19:10</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b>無預報</b></span></p>
+    <p class="sky" data-d="2026-10-03" data-loc="3"><span>日出 <b>08:07</b></span><span>日落 <b>19:10</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b class="wx-pop">無預報</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · 出發前自理</span></div>
@@ -1289,7 +1443,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <ul>
       <li><b>09:00</b> 起床收行李，兩台車都翻一遍（後車廂、椅子底下、充電線）</li>
       <li><b>11:00</b> 加滿油（FAI 附近加油站有限）</li>
-      <li><b>12:00</b> <a class="jump" href="#a-d8-1">到 FAI 還車</a> —— 起飛前 2.5 小時</li>
+      <li><b>12:00</b><span class="fix">已訂</span> <a class="jump" href="#a-d8-1">到 FAI 還車</a> —— 起飛前 2.5 小時</li>
       <li><b>防熊噴霧不能上飛機</b>：留給下一位旅客、送人，或交給租車櫃檯</li>
       <li><b>14:42</b> SFO 班機 · <b>16:04</b> DFW 班機</li>
     </ul>
@@ -1298,6 +1452,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <div class="acts">
     <details class="act" id="a-d8-1">
       <summary class="act-h">Enterprise 還車 <span class="meta">FAI · 起飛前 2.5 小時到</span></summary>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Enterprise%20Rent-A-Car%2C%20Fairbanks%20International%20Airport%2C%20Fairbanks%2C%20AK" target="_blank" rel="noopener">Enterprise · FAI 機場</a></p>
       
       <details class="note bring" open="">
         <summary class="lbl">離開前檢查<span class="cnt">3</span></summary>
@@ -1327,7 +1482,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <details class="note beware" open="">
         <summary class="lbl">熊 — 九月底還沒冬眠<span class="cnt">3</span></summary>
         <ul>
-      <li>入冬前是<b>瘋狂進食期</b>，熊比夏天更活躍也更專注在找食物。Castner、Hatcher Pass、Valdez 一帶都有。</li>
+      <li>入冬前是<b>瘋狂進食期</b>，熊比夏天更活躍也更專注在找食物。Hatcher Pass、Thompson Pass、Valdez 一帶都有。</li>
       <li>健行時<b>出聲</b>、<b>結伴</b>、噴霧掛在腰上而不是背包裡。食物味道重的東西不要留在步道或帳篷。</li>
       <li>遇到熊：不要跑、不要尖叫，面對牠、把手臂舉高讓自己看起來大、慢慢後退。</li>
     </ul>
@@ -1338,7 +1493,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <summary class="lbl">三個共通原則<span class="cnt">3</span></summary>
         <ul>
       <li>有嚮導就<b>完全跟著嚮導走</b>（Matanuska、Valdez 獨木舟）。</li>
-      <li>沒有嚮導的地方（Castner、Worthington）<b>不要上冰、不要站在冰壁下</b>、不要進冰洞深處。</li>
+      <li>沒有嚮導的地方（Worthington 前緣）<b>不要上冰、也不要站在冰壁下</b>，邊緣會崩落。</li>
       <li>冰川融水又冷又急，看起來淺的水流一樣會帶走人。</li>
     </ul>
       </details>
@@ -1355,32 +1510,17 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
       </details>
 
   <h3>沒有訊號的時候</h3>
-  <p>Glenn Highway 部分路段、Hatcher Pass 山上、Thompson Pass、Castner 一帶都沒有手機訊號。出發前把整趟路的 Google Maps 離線地圖下載好，每天早上跟另一台車對一次今天的會合點和最晚回報時間。住宿地址先截圖存在相簿裡。</p>
+  <p>Glenn Highway 部分路段、Hatcher Pass 山上、Thompson Pass 到 Delta Junction 一帶都沒有手機訊號。出發前把整趟路的 Google Maps 離線地圖下載好（<a href="https://maps.app.goo.gl/9PrJDUgPUCuHj2336" target="_blank" rel="noopener">Alaska Roadtrip 清單</a>裡的點在離線地圖範圍內才叫得出來），每天早上跟另一台車對一次今天的會合點和最晚回報時間。住宿地址先截圖存在相簿裡。</p>
 </section>
 
 <!-- ================= OPEN ITEMS ================= -->
 <section id="open">
   <h2>待確認</h2>
-  <p>想到什麼要確認的就打上去，確認完打勾。此版本儲存在目前瀏覽器，不會同步給其他旅伴。</p>
-
-  <div class="open" id="openlist"><div class="open-item"><span class="open-tag">CLAUDE</span><div class="open-body">Valdez 的 Nat Shack 還開著嗎？旺季結束後常縮短時間或直接關門——出發前一週打一次電話。真的關了就改吃 Valdez 市區其他海鮮。</div></div></div>
-  <p class="open-note" id="open-status">還有 1 件待確認</p>
-
-  <form class="open-add" id="open-add">
-    <input id="oi-text" type="text" maxlength="140" required="" placeholder="要確認什麼？例如：Palmer Airbnb 有沒有洗衣機">
-    <select id="oi-who" aria-label="誰提的">
-      <option value="Sherry">Sherry</option>
-      <option value="Shumin">Shumin</option>
-      <option value="HH">HH</option>
-      <option value="Mindy">Mindy</option>
-      <option value="Chien">Chien</option>
-      <option value="Mu-Ti">Mu-Ti</option>
-      <option value="Winnie">Winnie</option>
-      <option value="Samuel">Samuel</option>
-      <option value="其他">其他</option>
-    </select>
-    <button type="submit">新增</button>
-  </form>
+  <p>這份清單是<b>八個人共用的</b>——在下面直接新增或打勾，會馬上寫進 Google Sheets，其他人重新整理就看得到。</p>
+  <div class="open-embed">
+    <iframe src="https://script.google.com/macros/s/AKfycbywKdzW612IFZUoIyNEqUz4VZCvNmqPsWlGWMpf9MWfpz9NG0ici_ai79ARvQes9ZWl/exec" title="共用待確認清單" loading="lazy"></iframe>
+  </div>
+  <p class="open-note">上面那塊沒出現的話（部分瀏覽器會擋第三方內嵌），改用這兩個連結：<a href="https://script.google.com/macros/s/AKfycbywKdzW612IFZUoIyNEqUz4VZCvNmqPsWlGWMpf9MWfpz9NG0ici_ai79ARvQes9ZWl/exec" target="_blank" rel="noopener">在新分頁開啟清單</a> · <a href="https://docs.google.com/spreadsheets/d/1ZyP8ylAJYtS0nZ2XRQ8T7ZL58ZHoDkt50RWo9dxEenM/edit" target="_blank" rel="noopener">共用行程表</a>。沒訊號時兩個都開不了——出發前先把待確認的事處理掉。</p>
 </section>
 
 <!-- ================= BACKUP ================= -->
@@ -1392,26 +1532,31 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <div>
       <p class="n">Eklutna Lake + Thunderbird Falls</p>
       <p class="d">13 英里湖畔步道，秋色和鏡面湖。本地人的秘境。</p>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Eklutna%20Lake%2C%20Alaska" target="_blank" rel="noopener">Eklutna Lake</a> <span class="sep">·</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Thunderbird%20Falls%20Trailhead%2C%20Chugiak%2C%20AK" target="_blank" rel="noopener">Thunderbird Falls 登山口</a></p>
       <p class="m">ANC 東北 45 min · $5 停車 · 3–4 hr · 全年</p>
     </div>
     <div>
       <p class="n">White Mountains · Wickersham Dome</p>
       <p class="d">3 英里來回登頂，360 度凍原視野。外國觀光客幾乎不知道。</p>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Wickersham%20Dome%20Trailhead%2C%20Steese%20Highway%2C%20Alaska" target="_blank" rel="noopener">Wickersham 登山口</a></p>
       <p class="m">Steese Hwy MM 28 · 免費 · 4–6 hr</p>
     </div>
     <div>
       <p class="n">Knik Glacier ATV / 噴射艇</p>
       <p class="d">開 ATV 跨冰川河床到冰川腳下，比 Matanuska 刺激。九月底班次少，要先電話確認。</p>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Knik%20Glacier%2C%20Alaska" target="_blank" rel="noopener">Knik Glacier</a></p>
       <p class="m">Palmer 東 30 min · $190–250 · 4–6 hr</p>
     </div>
     <div>
       <p class="n">Independence Bowl 高山步道</p>
       <p class="d">Gold Cord Lake → Independence Bowl → Mineshaft Loop 串連，5 英里來回。Hatcher Pass 的進階版。</p>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Independence%20Mine%20State%20Historical%20Park%2C%20Palmer%2C%20AK" target="_blank" rel="noopener">Independence Mine 停車場</a></p>
       <p class="m">Hatcher Pass Mile 18 · $5 停車 · 4–5 hr · 至 9/30</p>
     </div>
     <div>
       <p class="n">Nenana 小鎮</p>
       <p class="d">1923 年木造火車站，列國家史蹟。北上路過時的休息點。</p>
+      <p class="maps">📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Nenana%2C%20Alaska" target="_blank" rel="noopener">Nenana</a></p>
       <p class="m">Parks Hwy MM 305 · 免費 · 45 min–1 hr</p>
     </div>
   </div>
@@ -1453,31 +1598,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 window.addEventListener('hashchange', () => revealHash(location.hash));
 revealHash(location.hash);
 </script>
-<script>
-(() => {
-const key='alaska-open-items-v1', list=document.getElementById('openlist'), status=document.getElementById('open-status'), field=document.getElementById('oi-text');
-let items=[{text:"Valdez 的 Nat Shack 還開著嗎？旺季結束後常縮短時間或直接關門——出發前一週打一次電話。真的關了就改吃 Valdez 市區其他海鮮。",who:'Claude',done:false}], persistent=true;
-try {const saved=JSON.parse(localStorage.getItem(key));if(Array.isArray(saved)&&saved.every(x=>x&&typeof x.text==='string'&&typeof x.who==='string'&&typeof x.done==='boolean'))items=saved;}catch{persistent=false;}
-function save(){try{localStorage.setItem(key,JSON.stringify(items));persistent=true;}catch{persistent=false;}}
-function render(){
- list.replaceChildren();
- items.forEach((item,i)=>{
-  const row=document.createElement('div');row.className='open-item'+(item.done?' done':'');
-  const check=document.createElement('input');check.type='checkbox';check.className='open-check';check.checked=item.done;check.setAttribute('aria-label','確認完成：'+item.text);
-  check.addEventListener('change',()=>{item.done=check.checked;save();render();});
-  const tag=document.createElement('span');tag.className='open-tag';tag.textContent=item.who;
-  const body=document.createElement('div');body.className='open-body';body.textContent=item.text;
-  const del=document.createElement('button');del.type='button';del.className='open-del';del.textContent='×';del.setAttribute('aria-label','刪除：'+item.text);
-  del.addEventListener('click',()=>{items.splice(i,1);save();render();});
-  row.append(check,tag,body,del);list.append(row);
- });
- status.textContent='還有 '+items.filter(x=>!x.done).length+' 件待確認'+(persistent?'':' · 瀏覽器無法儲存，重新整理後可能遺失修改');
-}
-status.setAttribute('aria-live','polite');field.setAttribute('aria-label','待確認事項');
-document.getElementById('open-add').addEventListener('submit',e=>{e.preventDefault();const text=field.value.trim();if(!text)return;items.push({text,who:document.getElementById('oi-who').value,done:false});save();render();field.value='';field.focus();});
-render();
-})();
-</script>
+
 
 <script>
 /* scroll-spy: highlight the rail link for whichever section is under the nav */
@@ -1506,6 +1627,78 @@ render();
  addEventListener('resize', queue);
  addEventListener('hashchange', () => setTimeout(queue, 60));
  update();
+})();
+</script>
+
+<script>
+/* 每次開啟這一頁時自動更新天氣（Open-Meteo）與極光地磁指數（NOAA SWPC）。
+   抓不到就靜靜保留 HTML 裡的快照數字——阿拉斯加路上沒訊號時照樣看得到。 */
+(() => {
+ const LAT=[61.2181,61.5997,61.1308,64.8378,65.0533];
+ const LON=[-149.9003,-149.1128,-146.3483,-147.7164,-146.0517];
+ const WC={0:'晴',1:'大致晴',2:'多雲時晴',3:'陰',45:'霧',48:'霧淞',51:'毛毛雨',53:'毛毛雨',
+  55:'毛毛雨',56:'凍毛雨',57:'凍毛雨',61:'小雨',63:'雨',65:'大雨',66:'凍雨',67:'凍雨',
+  71:'小雪',73:'雪',75:'大雪',77:'冰珠',80:'陣雨',81:'陣雨',82:'強陣雨',85:'陣雪',86:'大陣雪',95:'雷雨'};
+ const f=n=>Math.round(n*9/5+32), c=n=>Math.round(n);
+ const status=document.getElementById('wx-status');
+
+ async function run(){
+  const u='https://api.open-meteo.com/v1/forecast?latitude='+LAT.join(',')+'&longitude='+LON.join(',')
+   +'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,cloud_cover_mean,wind_speed_10m_max'
+   +'&timezone=America%2FAnchorage&wind_speed_unit=mph&start_date=2026-09-26&end_date=2026-10-03';
+  const res=await fetch(u);
+  if(!res.ok) throw new Error('HTTP '+res.status);
+  let data=await res.json();
+  if(!Array.isArray(data)) data=[data];
+  const pick=(loc,d,key)=>{
+   const L=data[loc]; if(!L||!L.daily) return null;
+   const i=L.daily.time.indexOf(d); if(i<0) return null;
+   const v=L.daily[key][i]; return (v===null||v===undefined)?null:v;
+  };
+  let filled=0;
+  document.querySelectorAll('[data-d][data-loc]').forEach(el=>{
+   const d=el.getAttribute('data-d'), loc=+el.getAttribute('data-loc');
+   const pop=pick(loc,d,'precipitation_probability_max'), cc=pick(loc,d,'cloud_cover_mean');
+   const tx=pick(loc,d,'temperature_2m_max'), tn=pick(loc,d,'temperature_2m_min');
+   const wc=pick(loc,d,'weather_code'), wd=pick(loc,d,'wind_speed_10m_max');
+   const set=(sel,html)=>{const n=el.querySelector(sel); if(n&&html!==null){n.innerHTML=html; filled++;}};
+   if(pop!==null) set('.wx-pop',pop+'%');
+   if(cc!==null)  set('.wx-cc',cc+'%');
+   if(tx!==null&&tn!==null) set('.wx-t',f(tx)+' / '+f(tn)+'°F<br>'+c(tx)+' / '+c(tn)+'°C');
+   if(wc!==null)  set('.wx-w',WC[wc]||('天氣代碼 '+wc));
+   if(cc!==null&&wd!==null) set('.wx-cw',cc+'%<br>'+Math.round(wd)+' mph');
+  });
+  return filled;
+ }
+
+ async function kp(){
+  try{
+   const r=await fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json');
+   const j=await r.json();
+   const pred=j.filter(x=>x.observed==='predicted');
+   if(!pred.length) return '';
+   const byDay={};
+   pred.forEach(x=>{const d=x.time_tag.slice(0,10); const v=parseFloat(x.kp);
+    if(!byDay[d]||v>byDay[d]) byDay[d]=v;});
+   const nights=['2026-09-30','2026-10-01','2026-10-02'].filter(d=>byDay[d]!==undefined);
+   if(!nights.length) return '';
+   return ' · 極光夜 Kp 預報 ' + nights.map(d=>d.slice(5)+' 最高 '+byDay[d].toFixed(0)).join('、');
+  }catch(e){ return ''; }
+ }
+
+ (async ()=>{
+  try{
+   const n=await run();
+   const extra=await kp();
+   if(status){
+    status.classList.add('live');
+    status.textContent='天氣已更新 · '+new Date().toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})
+     +'（Open-Meteo，共 '+n+' 筆）'+extra;
+   }
+  }catch(e){
+   if(status) status.textContent='目前連不上氣象伺服器，以下顯示的是 2026/9/18 抓到的快照。';
+  }
+ })();
 })();
 </script>
 </body></html>
