@@ -637,12 +637,12 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
   <h2>出發前</h2>
 
   <h3>每日天氣</h3>
-  <p class="wx-status" id="wx-status">預報為 2026/9/18 的快照 —— 打開這一頁時會自動抓最新資料。</p>
+  <p class="wx-status" id="wx-status">預報為 2026/9/22 的快照 —— 打開這一頁時會自動抓最新資料。</p>
   <details class="note check" open="">
         <summary class="lbl">先讀這個<span class="cnt">3</span></summary>
         <ul>
-      <li>資料抓取時間 <b>2026/9/18</b>（Open-Meteo）。模型最遠到 <b>10/2</b>，所以 <b>D1–D7 都有真實預報了</b>，只有 <b>D8（10/3）</b>還在範圍外。</li>
-      <li>現在是 <b>8–14 天後</b>的預報，比上一版近了 3 天，但這種距離仍然只能看<b>趨勢</b>（偏乾還是偏濕、偏暖還是偏冷）。<b>出發前 3 天再看一次，那時才是可以拿來決定穿什麼的數字。</b></li>
+      <li>資料抓取時間 <b>2026/9/22</b>（Open-Meteo）。<b>八天全部都在預報範圍內了</b>，不再有氣候平均值。</li>
+      <li>現在是 <b>4–11 天後</b>的預報。前幾天已經進入可用範圍，後段仍然只能看<b>趨勢</b>。<b>出發前一天再看一次</b>——打開這一頁就會自動更新。</li>
       <li>白天大約 11 小時，而且每天少 6 分鐘。步道行程抓「<b>日落前 1 小時回到停車場</b>」，這幾天大約是 <b>18:15–18:45</b>；日落後還有約 45 分鐘微光，那 1 小時是留給走錯路或走比較慢的人的。</li>
     </ul>
       </details>
@@ -650,14 +650,14 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <table>
       <thead><tr><th>日期</th><th>地點</th><th>高 / 低溫</th><th>天氣</th><th>雲量 · 風</th><th>日出 / 日落</th></tr></thead>
       <tbody>
-        <tr data-d="2026-09-26" data-loc="0"><td><b>D1</b> 9/26 六</td><td>Anchorage</td><td class="num wx-t">54 / 44°F<br>12 / 7°C</td><td class="wx-w">毛毛雨</td><td class="num wx-cw">86%<br>5 mph</td><td class="num">07:54<br>19:45</td></tr>
-        <tr data-d="2026-09-27" data-loc="1"><td><b>D2</b> 9/27 日</td><td>Anchorage → Palmer</td><td class="num wx-t">48 / 43°F<br>9 / 6°C</td><td class="wx-w">毛毛雨</td><td class="num wx-cw">96%<br>3 mph</td><td class="num">07:57<br>19:42</td></tr>
-        <tr data-d="2026-09-28" data-loc="2"><td><b>D3</b> 9/28 一</td><td>Palmer → Valdez</td><td class="num wx-t">49 / 47°F<br>10 / 8°C</td><td class="wx-w">陣雨</td><td class="num wx-cw">100%<br>2 mph</td><td class="num">07:56<br>19:25</td></tr>
-        <tr data-d="2026-09-29" data-loc="2"><td><b>D4</b> 9/29 二</td><td>Valdez</td><td class="num wx-t">50 / 46°F<br>10 / 8°C</td><td class="wx-w">陣雨</td><td class="num wx-cw">100%<br>2 mph</td><td class="num">07:47<br>19:21</td></tr>
-        <tr data-d="2026-09-30" data-loc="3"><td><b>D5</b> 9/30 三</td><td>Valdez → Fairbanks</td><td class="num wx-t">44 / 35°F<br>7 / 2°C</td><td class="wx-w">陰</td><td class="num wx-cw">73%<br>11 mph</td><td class="num">07:50<br>19:21</td></tr>
-        <tr data-d="2026-10-01" data-loc="4"><td><b>D6</b> 10/1 四</td><td>Chena Hot Springs</td><td class="num wx-t">33 / 31°F<br>1 / −1°C</td><td class="wx-w"><b>小雪</b></td><td class="num wx-cw">89%<br>11 mph</td><td class="num">08:01<br>19:17</td></tr>
-        <tr data-d="2026-10-02" data-loc="3"><td><b>D7</b> 10/2 五</td><td>Fairbanks</td><td class="num wx-t">43 / 32°F<br>6 / 0°C</td><td class="wx-w">毛毛雨</td><td class="num wx-cw">100%<br>5 mph</td><td class="num">08:04<br>19:13</td></tr>
-        <tr data-d="2026-10-03" data-loc="3"><td><b>D8</b> 10/3 六</td><td>Fairbanks</td><td class="num wx-t">—</td><td class="wx-w">超出預報範圍</td><td class="num wx-cw">—</td><td class="num">08:07<br>19:10</td></tr>
+        <tr data-d="2026-09-26" data-loc="0"><td><b>D1</b> 9/26 六</td><td>Anchorage</td><td class="num wx-t">59 / 45°F<br>15 / 7°C</td><td class="wx-w">陣雨<br><span style="color:var(--ochre-ink);font-size:13px">降雨 63%，落地當晚就有雨</span></td><td class="num wx-cw">93%<br>9 mph</td><td class="num">07:54<br>19:45</td></tr>
+        <tr data-d="2026-09-27" data-loc="1"><td><b>D2</b> 9/27 日</td><td>Anchorage → Palmer</td><td class="num wx-t">52 / 42°F<br>11 / 5°C</td><td class="wx-w">陣雨<br><span style="color:var(--ochre-ink);font-size:13px">雲量 84%——纜車山頂很可能在雲裡</span></td><td class="num wx-cw">84%<br>5 mph</td><td class="num">07:57<br>19:42</td></tr>
+        <tr data-d="2026-09-28" data-loc="2"><td><b>D3</b> 9/28 一</td><td>Palmer → Valdez</td><td class="num wx-t">49 / 44°F<br>9 / 7°C</td><td class="wx-w">毛毛雨<br><span style="color:var(--ochre-ink);font-size:13px">Valdez 降雨 75%、雲量 100%</span></td><td class="num wx-cw">100%<br>2 mph</td><td class="num">07:56<br>19:25</td></tr>
+        <tr data-d="2026-09-29" data-loc="2"><td><b>D4</b> 9/29 二</td><td>Valdez</td><td class="num wx-t">51 / 43°F<br>11 / 6°C</td><td class="wx-w">毛毛雨<br><span style="color:var(--ink-3);font-size:13px">獨木舟日，防水裝備一定用得到</span></td><td class="num wx-cw">93%<br>4 mph</td><td class="num">07:47<br>19:21</td></tr>
+        <tr data-d="2026-09-30" data-loc="3"><td><b>D5</b> 9/30 三</td><td>Valdez → Fairbanks</td><td class="num wx-t">45 / 31°F<br>7 / 0°C</td><td class="wx-w">陰<br><span style="color:var(--spruce);font-size:13px">極光第 1 晚雲量 59%，三晚最好</span></td><td class="num wx-cw">59%<br>5 mph</td><td class="num">07:50<br>19:21</td></tr>
+        <tr data-d="2026-10-01" data-loc="4"><td><b>D6</b> 10/1 四</td><td>Chena Hot Springs</td><td class="num wx-t">47 / 30°F<br>8 / −1°C</td><td class="wx-w">陰<br><span style="color:var(--ochre-ink);font-size:13px">夜間 −1°C，回程 60 哩可能結冰</span></td><td class="num wx-cw">84%<br>5 mph</td><td class="num">08:01<br>19:17</td></tr>
+        <tr data-d="2026-10-02" data-loc="3"><td><b>D7</b> 10/2 五</td><td>Fairbanks</td><td class="num wx-t">41 / 32°F<br>5 / 0°C</td><td class="wx-w">陰<br><span style="color:var(--ochre-ink);font-size:13px">雲量 97%——最後一晚極光機會最差</span></td><td class="num wx-cw">97%<br>6 mph</td><td class="num">08:04<br>19:13</td></tr>
+        <tr data-d="2026-10-03" data-loc="3"><td><b>D8</b> 10/3 六</td><td>Fairbanks</td><td class="num wx-t">46 / 29°F<br>8 / −1°C</td><td class="wx-w">陰<br><span style="color:var(--ink-3);font-size:13px">早上收行李、還車，天氣無礙</span></td><td class="num wx-cw">65%<br>6 mph</td><td class="num">08:07<br>19:10</td></tr>
       </tbody>
     </table>
   </div>
@@ -665,8 +665,8 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <summary class="lbl">山口不看這張表<span class="cnt">4</span></summary>
         <ul>
       <li>上表是城鎮高度的數字。<b>兩個山口比山下低 5–8°C，而且可能在下雪。</b></li>
-      <li><b>Hatcher Pass 3,550 ft（9/27）</b>：白天約 2°C、夜間 −1°C 上下，山頂可能已經有第一場雪（termination dust）。</li>
-      <li><b>Thompson Pass 2,678 ft（9/28 下山、9/30 上山）</b>：白天 3–5°C、清晨 1–3°C，這版預報比上一版暖，結冰風險降低；但 9/28 山下雲量 100%，<b>濃霧和能見度才是主要問題</b>。</li>
+      <li><b>Hatcher Pass 3,550 ft（9/27）</b>：白天約 4°C、夜間 −2°C 上下，山頂可能已經有第一場雪（termination dust）。</li>
+      <li><b>Thompson Pass 2,678 ft（9/28 下山、9/30 上山）</b>：白天 3–4°C、清晨 1–2°C。9/28 山下雲量 100%、降雨 75%，<b>濃霧和能見度是主要問題</b>；<b>9/30 早上 Valdez 一帶的天氣代碼是「陣雪」</b>——海平面不太可能下雪，但那格網包含山口，翻過去之前先看 511 路況。</li>
       <li>另外兩件跟全程有關的事：<b>Valdez 是全阿拉斯加最多雨的城鎮</b>，防水裝備在那兩天一定用得到；<b>Fairbanks 九月底夜間每晚結冰</b>，三個極光晚上都在冰點以下。</li>
     </ul>
       </details>
@@ -689,10 +689,10 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <div class="pack-col">
       <h4>裝備</h4>
       <ul>
-        <li><input type="checkbox" id="p7"><label for="p7">冰爪 microspikes（Matanuska、Hatcher Pass）</label></li>
         <li><input type="checkbox" id="p9"><label for="p9">暖暖包（手 + 腳）足量</label></li>
         <li><input type="checkbox" id="p10"><label for="p10">腳架 + 相機備用電池（低溫掉電快）</label></li>
         <li><input type="checkbox" id="p11"><label for="p11">行動電源、車充、保溫瓶</label></li>
+        <li><input type="checkbox" id="p7"><label for="p7">冰爪 microspikes —— <b>Matanuska 業者有附</b>，自己帶是為了 Hatcher Pass 之類沒嚮導的步道<span class="opt">選配</span></label></li>
         <li><input type="checkbox" id="p8"><label for="p8">頭燈（有紅光模式）+ 備用電池<span class="opt">選配</span></label></li>
         <li><input type="checkbox" id="p12"><label for="p12">登山杖<span class="opt">選配</span></label></li>
       </ul>
@@ -755,7 +755,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline"><b>今天只有 6 個人、1 台車</b>，Samuel 夫妻明晚才到。不排行程，讓身體適應時差。</p>
     <p class="legs"><span class="node">ANC 機場</span> <span class="arrow">→</span> <span class="dur">15分</span> <span class="arrow">→</span> <span class="node">市區</span> <span class="arrow">→</span> <span class="dur">20分</span> <span class="arrow">→</span> <span class="node">Airbnb</span></p>
   </div>
-    <p class="sky" data-d="2026-09-26" data-loc="0"><span>日出 <b>07:54</b></span><span>日落 <b>19:45</b></span><span>全黑 <b>~22:15</b></span><span>降雨 <b class="wx-pop">47%</b></span></p>
+    <p class="sky" data-d="2026-09-26" data-loc="0"><span>日出 <b>07:54</b></span><span>日落 <b>19:45</b></span><span>全黑 <b>~22:15</b></span><span>降雨 <b class="wx-pop">63%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v">機上解決</span></div>
@@ -846,7 +846,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">一天走「南一趟、北一趟」，開車不長但很分散，早點出門。<b>晚上 Samuel 夫妻到 Palmer 會合，全隊到齊。</b></p>
     <p class="legs"><span class="node">Anchorage</span> <span class="arrow">→</span> <span class="dur">40分</span> <span class="arrow">→</span> <span class="node">Girdwood</span> <span class="arrow">→</span> <span class="dur">2時</span> <span class="arrow">→</span> <span class="node">Hatcher Pass</span> <span class="arrow">→</span> <span class="dur">45分</span> <span class="arrow">→</span> <span class="node">Palmer</span></p>
   </div>
-    <p class="sky" data-d="2026-09-27" data-loc="1"><span>日出 <b>07:57</b></span><span>日落 <b>19:42</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b class="wx-pop">43%</b></span></p>
+    <p class="sky" data-d="2026-09-27" data-loc="1"><span>日出 <b>07:57</b></span><span>日落 <b>19:42</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b class="wx-pop">57%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v">Snow City / Black Cup 外帶</span></div>
@@ -903,7 +903,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
         <ul>
           <li>停車費 $5 現金小鈔。</li>
           <li>防水鞋、手套、毛帽——海拔 3,550 呎，山上可能已經下過雪。</li>
-          <li>冰爪（如果步道結霜或積雪）；登山杖選配。</li>
+          <li>冰爪（如果步道結霜或積雪）——<b>這裡沒有嚮導，要自己帶</b>；登山杖選配。</li>
           <li>離線地圖——山上沒訊號。</li>
         </ul>
       </details>
@@ -944,7 +944,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">上午冰川健行，下午順路走 Thompson Pass South Trail（主方案）；若時間或天氣不合適，移至 9/30 備案。</p>
     <p class="legs"><span class="node">Palmer</span> <span class="arrow">→</span> <span class="dur">1.5時</span> <span class="arrow">→</span> <span class="node">Matanuska</span> <span class="arrow">→</span> <span class="dur">4–4.5時</span> <span class="arrow">→</span> <span class="node">Worthington → South Trail → Bridal Veil Falls → Valdez</span></p>
   </div>
-    <p class="sky" data-d="2026-09-28" data-loc="2"><span>日出 <b>07:56</b></span><span>日落 <b>19:25</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b class="wx-pop">60%</b></span></p>
+    <p class="sky" data-d="2026-09-28" data-loc="2"><span>日出 <b>07:56</b></span><span>日落 <b>19:25</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b class="wx-pop">75%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v">The Noisy Goose Cafe</span></div>
@@ -1047,7 +1047,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">全團最高票的行程。早上在 Valdez 吃早餐、自由活動並準備獨木舟，11:30 到湖邊集合。South Trail 已排 9/28，9/30 為備案。</p>
     <p class="legs"><span class="node">Valdez</span> → <span class="dur">15分</span> → <span class="node">Glacier Lake</span> → <span class="dur">15分</span> → <span class="node">市區</span> → <span class="dur">10分</span> → <span class="node">Solomon Gulch</span></p>
   </div>
-    <p class="sky" data-d="2026-09-29" data-loc="2"><span>日出 <b>07:47</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~21:50</b></span><span>降雨 <b class="wx-pop">51%</b></span></p>
+    <p class="sky" data-d="2026-09-29" data-loc="2"><span>日出 <b>07:47</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~21:50</b></span><span>降雨 <b class="wx-pop">57%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · Valdez 悠閒吃早餐</span></div>
@@ -1136,7 +1136,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline"><b>Castner 冰洞已取消</b>（洞頂和地基不穩）。今天變成單純的長途拉車日，反而有餘裕把 9/28 沒走完的 Thompson Pass 三個點補回來。</p>
     <p class="legs"><span class="node">Valdez</span> <span class="arrow">→</span> <span class="dur">2.5時</span> <span class="arrow">→</span> <span class="node">Glennallen</span> <span class="arrow">→</span> <span class="dur">4.5時</span> <span class="arrow">→</span> <span class="node">Fairbanks</span></p>
   </div>
-    <p class="sky" data-d="2026-09-30" data-loc="3"><span>日出 <b>07:50</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b class="wx-pop">7%</b></span><span class="aur">雲量 <b class="wx-cc">73%</b></span><span class="aur">月亮 <b>83%</b></span></p>
+    <p class="sky" data-d="2026-09-30" data-loc="3"><span>日出 <b>07:50</b></span><span>日落 <b>19:21</b></span><span>全黑 <b>~22:10</b></span><span>降雨 <b class="wx-pop">24%</b></span><span class="aur">雲量 <b class="wx-cc">59%</b></span><span class="aur">月亮 <b>83%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · 08:30 出發前在 Valdez 吃完</span></div>
@@ -1230,7 +1230,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">日夜顛倒日。白天睡飽，下午出發，晚上直接在岩石池裡看極光。</p>
     <p class="legs"><span class="node">Fairbanks</span> <span class="arrow">→</span> <span class="dur">1.5時</span> <span class="arrow">→</span> <span class="node">Chena Hot Springs</span> <span class="arrow">→</span> <span class="dur">1.5時</span> <span class="arrow">→</span> <span class="node">Fairbanks</span></p>
   </div>
-    <p class="sky" data-d="2026-10-01" data-loc="4"><span>日出 <b>08:01</b></span><span>日落 <b>19:17</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b class="wx-pop">14%</b></span><span class="aur">雲量 <b class="wx-cc">89%</b></span><span class="aur">月亮 <b>73%</b></span></p>
+    <p class="sky" data-d="2026-10-01" data-loc="4"><span>日出 <b>08:01</b></span><span>日落 <b>19:17</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b class="wx-pop">12%</b></span><span class="aur">雲量 <b class="wx-cc">84%</b></span><span class="aur">月亮 <b>73%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · 睡到自然醒，自理</span></div>
@@ -1322,7 +1322,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">白天彈性安排，晚上是最後一個極光晚上——也是月亮最暗的一晚（62%）。</p>
     <p class="legs"><span class="node">Fairbanks</span> <span class="arrow">→</span> <span class="dur">15分</span> <span class="arrow">→</span> <span class="node">UAF / 市區</span></p>
   </div>
-    <p class="sky" data-d="2026-10-02" data-loc="3"><span>日出 <b>08:04</b></span><span>日落 <b>19:13</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b class="wx-pop">10%</b></span><span class="aur">雲量 <b class="wx-cc">100%</b></span><span class="aur">月亮 <b>62%</b></span></p>
+    <p class="sky" data-d="2026-10-02" data-loc="3"><span>日出 <b>08:04</b></span><span>日落 <b>19:13</b></span><span>全黑 <b>~22:00</b></span><span>降雨 <b class="wx-pop">16%</b></span><span class="aur">雲量 <b class="wx-cc">97%</b></span><span class="aur">月亮 <b>62%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · Fairbanks 自理</span></div>
@@ -1430,7 +1430,7 @@ footer{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink);font-fam
     <p class="tagline">輕鬆收行李，早點到機場。</p>
     <p class="legs"><span class="node">Airbnb</span> <span class="arrow">→</span> <span class="dur">20分</span> <span class="arrow">→</span> <span class="node">FAI 機場</span></p>
   </div>
-    <p class="sky" data-d="2026-10-03" data-loc="3"><span>日出 <b>08:07</b></span><span>日落 <b>19:10</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b class="wx-pop">無預報</b></span></p>
+    <p class="sky" data-d="2026-10-03" data-loc="3"><span>日出 <b>08:07</b></span><span>日落 <b>19:10</b></span><span>全黑 <b>~21:55</b></span><span>降雨 <b class="wx-pop">14%</b></span></p>
   </div>
   <div class="meals" aria-label="三餐">
     <div><span class="m-l">早餐</span><span class="m-v none">待定 · 出發前自理</span></div>
@@ -1696,7 +1696,7 @@ revealHash(location.hash);
      +'（Open-Meteo，共 '+n+' 筆）'+extra;
    }
   }catch(e){
-   if(status) status.textContent='目前連不上氣象伺服器，以下顯示的是 2026/9/18 抓到的快照。';
+   if(status) status.textContent='目前連不上氣象伺服器，以下顯示的是 2026/9/22 抓到的快照。';
   }
  })();
 })();
